@@ -37,7 +37,7 @@ data.pop(0)
 # shuffle and save data
 data = shuffle(data)
 splitInt = int( len(data)*percentTraining )
-train = open(trainingFile)
-pickle.dump(data[:splitInt], train)
-test = open(testingFile)
-pickle.dump(data[splitInt:], test)
+with open(trainingFile, 'wb') as train:
+    pickle.dump(data[:splitInt], train)
+with open(testingFile, 'wb') as test:
+    pickle.dump(data[splitInt:], test)
