@@ -1,17 +1,19 @@
-import nltk.classify.naivebayes as nb
-import nltk.classify as classify
+import nltk
 import pickle
+from sklearn.model_selection import train_test_split
+from sklearn.utils import shuffle
 
-trainingFile = 'data/ironyTraining.li'
-testingFile = 'data/ironyTesting.li'
+# get data
+dataFile = 'data/allData.pickle'
 
-with open(trainingFile) as train:
-    trainData = pickle.load(train)
-with open(testingFile) as test:
-    testData = pickle.load(test)
+with open(dataFile, 'rb') as dFile:
+    data = pickle.load(dFile)
+
+# separate into training and testing
+xTrain, xTest, yTrain, yTest = train_test_split(data, test_size=0.2,random_state=20)
 
 # train and get variables
-classifier = nb.train(trainData)
-accuracy = classify.accuracy(classifier, testing_set) * 100
+classifier = nltk.NaiveBayesClassifier.train(trainData)
+accuracy = nltk.classify.accuracy(classifier, testData) * 100
 
 print("Classifier accuracy percent:", accuracy)

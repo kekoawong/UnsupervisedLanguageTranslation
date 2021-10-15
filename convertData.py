@@ -2,14 +2,12 @@ import csv
 from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize
 import re
-from sklearn.utils import shuffle
 import pickle
 
 # set variables
 percentTraining = 0.7
 inputFile = 'data/irony-labeled.csv'
-trainingFile = 'data/ironyTraining.li'
-testingFile = 'data/ironyTesting.li'
+outputFile = 'data/allData.pickle'
 
 # convert stopwords to dict
 sw = {}
@@ -33,10 +31,7 @@ with open(inputFile, newline='') as csvfile:
         data.append( (words, row[1]) )
 # remove header
 data.pop(0)
-# shuffle and save data
-data = shuffle(data)
-splitInt = int( len(data)*percentTraining )
-with open(trainingFile, 'wb') as train:
-    pickle.dump(data[:splitInt], train)
-with open(testingFile, 'wb') as test:
-    pickle.dump(data[splitInt:], test)
+with open(outputFile, 'wb') as outFile:
+    pickle.dump(data, outFile)
+
+print("Complete!")
