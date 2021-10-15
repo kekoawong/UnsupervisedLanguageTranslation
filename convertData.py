@@ -1,5 +1,4 @@
 import csv
-import nltk.classify.naivebayes as nb
 from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize
 import re
