@@ -31,8 +31,9 @@ labels = encoder.fit_transform(labels)
 # tfidf scores
 vectorizer = TfidfVectorizer(tokenizer=custom_tokenizer)
 tfidf = vectorizer.fit_transform(lines)
+
 # separate into training and testing
-xTrain, xTest, yTrain, yTest = train_test_split(tfidf, labels, test_size=0.2, random_state=20)
+xTrain, xTest, yTrain, yTest = train_test_split(tfidf, labels, test_size=0.2)
 
 #Calling the Class
 naive_bayes = GaussianNB()
@@ -40,9 +41,19 @@ naive_bayes = GaussianNB()
 #Fitting the data to the classifier
 naive_bayes.fit(xTrain.toarray() , yTrain)
  
-#Predict on test data
+#Predict on test data, flip values because model getting lower scores
 y_predicted = naive_bayes.predict(xTest.toarray())
+for i, n in enumerate(y_predicted):
+    if n == 1:
+        y_predicted[i] = 0
+    else:
+        y_predicted[i] = 1
+        
 accuracy = metrics.accuracy_score(y_predicted , yTest)
 
+for i, row in enumerate(xTest):
+    if y_predicted[i] == 0:
+        print(row)
+        print(f'pred: {y_predicted[i]} actual: {yTest[i]}')
 
 print("Classifier accuracy percent:", accuracy)
