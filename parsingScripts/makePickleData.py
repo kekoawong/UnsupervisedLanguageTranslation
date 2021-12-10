@@ -9,22 +9,15 @@ import pickle
 def cleaner(line):
     line = re.sub("@[A-Za-z0-9]+","",line) #Remove @ sign
     line = re.sub(r'\[(.*?)\]\(.+?\)', "", line)
+    line = line.replace("\n", "")
+    line = line.replace("\r", "")
     line = re.sub(r'\*', "", line) # Remove *
     line = re.sub(r"(?:\@|http?\://|https?\://|www)\S+", "", line) #Remove http links
+    line = re.sub(r'\[(.*?)\]\(.+?\)', "", line)
     line = " ".join(line.split())
     line = ''.join(c for c in line if c not in emoji.UNICODE_EMOJI) #Remove Emojis
     line = line.replace("#", "").replace("_", " ") #Remove hashtag sign but keep the text
     #line = " ".join(w for w in nltk.wordpunct_tokenize(line))
-    return line
-
-def cleanString(line):
-    '''
-    Function will take string as input, cleaning links and getting rid of stopwords
-    '''
-    line = line.replace("\n", "")
-    line = line.replace("\r", "")
-    # remove links
-    line = re.sub(r'\[(.*?)\]\(.+?\)', "", line)
     return line
 
 if __name__ == "__main__":
@@ -51,7 +44,7 @@ if __name__ == "__main__":
         next(spamreader, None)
         for row in spamreader:
             # clean string
-            line = cleanString(row[0])
+            line = cleaner(row[0])
             sentences.append( (line, row[1]) )
             # tokenize and remove stopwords
             tokens = word_tokenize(line)
@@ -66,13 +59,14 @@ if __name__ == "__main__":
         next(spamreader, None)
         for row in spamreader:
             # clean string
-            line = cleanString(row[0])
+            line = cleaner(row[0])
 
             # skip if not ironic or regular
             if row[1] != 'irony' and row[1] != 'regular':
                 continue
             else:
                 row[1] = 1 if row[1] != 'irony' else -1
+            
             sentences.append( (line, row[1]) )
             # tokenize and remove stopwords
             tokens = word_tokenize(line)
@@ -85,7 +79,7 @@ if __name__ == "__main__":
         next(spamreader, None)
         for row in spamreader:
             # clean string
-            line = cleanString(row[0])
+            line = cleaner(row[0])
             # skip if not ironic or regular
             if row[1] != 'irony' and row[1] != 'regular':
                 continue
