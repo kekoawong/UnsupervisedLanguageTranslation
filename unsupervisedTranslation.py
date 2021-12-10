@@ -5,7 +5,8 @@ if __name__ == "__main__":
     import argparse, sys
     
     parser = argparse.ArgumentParser()
-    parser.add_argument('--train', type=str, help='training data')
+    parser.add_argument('--trainf', type=str, help='foreign training data')
+    parser.add_argument('--traint', type=str, help='target training data')
     parser.add_argument('--dev', type=str, help='development data')
     parser.add_argument('infile', nargs='?', type=str, help='test data to translate')
     parser.add_argument('-o', '--outfile', type=str, help='write translations to file')

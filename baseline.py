@@ -42,11 +42,6 @@ naive_bayes.fit(xTrain.toarray() , yTrain)
  
 #Predict on test data, flip values because model getting lower scores
 y_predicted = naive_bayes.predict(xTest.toarray())
-for i, n in enumerate(y_predicted):
-    if n == 1:
-        y_predicted[i] = 0
-    else:
-        y_predicted[i] = 1
         
 accuracy = metrics.accuracy_score(y_predicted , yTest)
 

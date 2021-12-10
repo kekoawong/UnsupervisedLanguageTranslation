@@ -30,7 +30,9 @@ def cleanString(line):
 if __name__ == "__main__":
     # set variables
     percentTraining = 0.7
-    inputFile = '../data/irony-labeled.csv'
+    inputFile1 = '../data/redditIrony.csv'
+    inputFile2 = '../data/twitterTrain.csv'
+    inputFile3 = '../data/twitterTest.csv'
     outputFile = '../data/allData.pickle'
     fullSentenceFile = '../data/sentences.pickle'
 
@@ -39,10 +41,14 @@ if __name__ == "__main__":
     for w in stopwords.words():
         sw[w] = True
 
-    with open(inputFile, newline='') as csvfile:
+    data = []
+    sentences = []
+
+    # read through all files 
+    with open(inputFile1, newline='') as csvfile:
         spamreader = csv.reader(csvfile)
-        data = []
-        sentences = []
+        # skip header
+        next(spamreader, None)
         for row in spamreader:
             # clean string
             line = cleanString(row[0])
@@ -52,8 +58,48 @@ if __name__ == "__main__":
             words = [w for w in tokens if not w in sw]
             # append to data
             data.append( (words, row[1]) )
-    # remove header
-    data.pop(0)
+    
+    # twitter data, need to convert labels
+    with open(inputFile2, newline='') as csvfile:
+        spamreader = csv.reader(csvfile)
+        # skip header
+        next(spamreader, None)
+        for row in spamreader:
+            # clean string
+            line = cleanString(row[0])
+
+            # skip if not ironic or regular
+            if row[1] != 'irony' and row[1] != 'regular':
+                continue
+            else:
+                row[1] = 1 if row[1] != 'irony' else -1
+            sentences.append( (line, row[1]) )
+            # tokenize and remove stopwords
+            tokens = word_tokenize(line)
+            words = [w for w in tokens if not w in sw]
+            # append to data
+            data.append( (words, row[1]) )
+    with open(inputFile3, newline='') as csvfile:
+        spamreader = csv.reader(csvfile)
+        # skip header
+        next(spamreader, None)
+        for row in spamreader:
+            # clean string
+            line = cleanString(row[0])
+            # skip if not ironic or regular
+            if row[1] != 'irony' and row[1] != 'regular':
+                continue
+            else:
+                row[1] = 1 if row[1] != 'irony' else -1
+            
+            sentences.append( (line, row[1]) )
+            # tokenize and remove stopwords
+            tokens = word_tokenize(line)
+            words = [w for w in tokens if not w in sw]
+            # append to data
+            data.append( (words, row[1]) )
+
+    
     with open(outputFile, 'wb') as outFile:
         pickle.dump(data, outFile)
     with open(fullSentenceFile, 'wb') as senFile:
