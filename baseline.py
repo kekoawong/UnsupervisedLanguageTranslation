@@ -5,7 +5,6 @@ from sklearn import metrics
 from nltk.stem import WordNetLemmatizer
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.preprocessing import LabelEncoder
-import numpy as np
 
 def custom_tokenizer(stringpassed):
     lemmatizer = WordNetLemmatizer()
@@ -51,9 +50,8 @@ for i, n in enumerate(y_predicted):
         
 accuracy = metrics.accuracy_score(y_predicted , yTest)
 
-for i, row in enumerate(xTest):
-    if y_predicted[i] == 0:
-        print(row)
-        print(f'pred: {y_predicted[i]} actual: {yTest[i]}')
+# for i, row in enumerate(xTest):
+#     if y_predicted[i] == 0:
+#         print(f'pred: {y_predicted[i]} actual: {yTest[i]}')
 
 print("Classifier accuracy percent:", accuracy)
