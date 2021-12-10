@@ -240,7 +240,7 @@ if __name__ == "__main__":
 
     if args.train:
         # Read training data and create vocabularies
-        traindata = read_parallel(args.train)
+        traindata = read_mono(args.train)
 
         fvocab = Vocab()
         evocab = Vocab()
