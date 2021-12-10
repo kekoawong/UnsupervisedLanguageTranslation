@@ -20,6 +20,7 @@ if __name__ == "__main__":
                 line = cleaner(row[0])
                 tokens = word_tokenize(line)
                 sen = ' '.join(tokens)
+                sen += '\n'
                 # lowercase, but this may help predict the stylig
                 # get rid of all punctuation not periods
                 if int(row[1]) < 0:

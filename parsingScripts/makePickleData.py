@@ -9,6 +9,7 @@ import pickle
 def cleaner(line):
     line = re.sub("@[A-Za-z0-9]+","",line) #Remove @ sign
     line = re.sub(r'\[(.*?)\]\(.+?\)', "", line)
+    line = re.sub(r'\*', "", line) # Remove *
     line = re.sub(r"(?:\@|http?\://|https?\://|www)\S+", "", line) #Remove http links
     line = " ".join(line.split())
     line = ''.join(c for c in line if c not in emoji.UNICODE_EMOJI) #Remove Emojis
