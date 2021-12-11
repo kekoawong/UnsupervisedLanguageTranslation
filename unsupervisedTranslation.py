@@ -3,13 +3,38 @@ from translationModel import *
 from sklearn.model_selection import train_test_split
 import random
 
+def trainModel(m, opt, inputData, targetData):
+    '''
+    Input of Model, optimizer, inputData, and targetData
+    Will output Model and optimizer
+    Ret: (model, optimizer)
+    '''
+    # shuffle data
+    traindata = list(zip(inputData, targetData))
+    random.shuffle(traindata)
+
+    ### Update model on train
+    train_loss = 0.
+    train_target_words = 0
+    for input_words, target_words in progress(traindata):
+        loss = -m.logprob(input_words, target_words)
+        opt.zero_grad()
+        loss.backward()
+        opt.step()
+        train_loss += loss.item()
+        train_target_words += len(target_words) # includes EOS
+
+    print(f'        train_loss={train_loss} train_ppl={math.exp(train_loss/train_target_words)}', flush=True)
+    return (m, opt)
+
+
 if __name__ == "__main__":
     import argparse, sys
     
     parser = argparse.ArgumentParser()
     parser.add_argument('--dataf', type=str, help='foreign language data')
     parser.add_argument('--datat', type=str, help='target language data')
-    parser.add_argument('--initial', 'infile', dest='initial', type=str, help='Initial rough translation of foreign language data into target language')
+    parser.add_argument('--initial', dest='initial', type=str, help='Initial rough translation of foreign language data into target language')
     parser.add_argument('--percentTrain', type=str, help='Percent to be used for training data (in decimal form), the remaining will be split between dev and test')
     parser.add_argument('--epochs', '-e', dest='epochs', type=str, help='Number of epochs to train per model per iteration')
     parser.add_argument('-iterations', '-i', dest='iterations', type=str, help='Number of epochs to train per model per iteration')
@@ -77,21 +102,11 @@ if __name__ == "__main__":
         for iteration in range(numIterations):
 
             # train target to foreign
+            print(f'Iteration {iteration+1}/{numIterations}, Target to Foreign:')
             for epoch in range(numEpochs):
-                # shuffle data
-                traindata = list(zip(targetPred, foreignTrain))
-                random.shuffle(traindata)
-
-                ### Update model on train
-                train_loss = 0.
-                train_fwords = 0
-                for twords, fwords in progress(traindata):
-                    loss = -m.logprob(twords, fwords)
-                    opt.zero_grad()
-                    loss.backward()
-                    opt.step()
-                    train_loss += loss.item()
-                    train_fwords += len(fwords) # includes EOS
+                print(f'    Epoch {epoch+1}/{numEpochs}:')
+                # train model
+                target_to_foreign, opt1 = trainModel(target_to_foreign, opt1, targetPred, foreignTrain)
 
                 ### Validate on dev set and print out a few translations
                 dev_loss = 0.
