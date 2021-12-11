@@ -16,5 +16,5 @@ System 1: Foreign --> Target
 System 2: Target --> Foreign  
 No parallel text.  
 
-Run command:  
-python3 unsupervisedTranslation.py --dataf 
+Run example command:  
+python3 unsupervisedTranslation.py --dataf examples/ironyTranslation/data/ironicSentences.txt --datat examples/ironyTranslation/data/unironicSentences.txt --initial examples/ironyTranslation/data/roughUnironicSent.txt -o examples/ironyTranslation/outputs/ironic_to_unironic --savetf examples/ironyTranslation/models/target-forein.torch --saveft examples/ironyTranslation/models/foreign-target.torch

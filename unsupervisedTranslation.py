@@ -50,8 +50,12 @@ def outputPred(m, inputData):
     return outputPred
 
 
-def outputTest(m, fileName, inputData):
-    fileN = f'{fileName}-{dev_loss}'
+def outputTest(m, fileName, inputData, predType):
+    '''
+    Writes outputs to file
+    predType is the type contained in the file, either target or foreign
+    '''
+    fileN = f'{fileName}-{predType}-{dev_loss}'
     with open(fileN, 'w') as outfile:
         for fwords in inputData:
             translation = m.translate(fwords)
@@ -73,7 +77,8 @@ if __name__ == "__main__":
     parser.add_argument('-iterations', '-i', dest='iterations', type=str, help='Number of epochs to train per model per iteration')
     parser.add_argument('-o', '--outfile', dest='outfile', type=str, help='write translations to file')
     parser.add_argument('--load', type=str, help='load model from file')
-    parser.add_argument('--save', type=str, help='save model in file')
+    parser.add_argument('--savetf', dest='savetf', type=str, help='save target to foreign model in file')
+    parser.add_argument('--saveft', dest='saveft', type=str, help='save foreign to target model in file')
     args = parser.parse_args()
 
     if args.dataf and args.initial and args.datat:
@@ -150,12 +155,12 @@ if __name__ == "__main__":
                 dev_loss = validateDev(target_to_foreign, predDev, targetDev)
                 if best_dev_loss is None or dev_loss < best_dev_loss:
                     best_model_tf = copy.deepcopy(target_to_foreign)
-                    if args.save:
-                        torch.save(target_to_foreign, args.save)
+                    if args.savetf:
+                        torch.save(target_to_foreign, args.savetf)
 
                     ### Translate test set if good dev scoring
                     if args.outfile:
-                        outputTest(target_to_foreign, args.outfile, predTest)
+                        outputTest(target_to_foreign, args.outfile, predTest, 'foreign')
 
                     best_dev_loss = dev_loss
             # update model
@@ -177,12 +182,12 @@ if __name__ == "__main__":
                 dev_loss = validateDev(foreign_to_target, predDev, targetDev)
                 if best_dev_loss is None or dev_loss < best_dev_loss:
                     best_model_ft = copy.deepcopy(foreign_to_target)
-                    if args.save:
-                        torch.save(foreign_to_target, args.save)
+                    if args.saveft:
+                        torch.save(foreign_to_target, args.saveft)
 
                     ### Translate test set if good dev scoring
                     if args.outfile:
-                        outputTest(foreign_to_target, args.outfile, predTest)
+                        outputTest(foreign_to_target, args.outfile, predTest, 'target')
 
                     best_dev_loss = dev_loss
             # update model
