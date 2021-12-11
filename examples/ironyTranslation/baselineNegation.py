@@ -3,6 +3,10 @@ import nltk
 from nltk.tokenize.treebank import TreebankWordDetokenizer
 
 def negateSentence(sent):
+    # do it twice because better conversion
+    tokens = nltk.word_tokenize(str(sent))
+    sent = TreebankWordDetokenizer().detokenize(tokens)
+    prev = sent
     tokens = nltk.word_tokenize(str(sent))
     for word,pos in nltk.pos_tag(tokens):
         if (pos.startswith("J")):
@@ -15,10 +19,10 @@ def negateSentence(sent):
             tokens.insert(ind, "not")
             sent = TreebankWordDetokenizer().detokenize(tokens)
             break
-        else:
-            tokens.insert(0, "not")
-            sent = TreebankWordDetokenizer().detokenize(tokens)
-            break
+
+    if prev == sent:
+        tokens.insert(0, "not")
+        sent = TreebankWordDetokenizer().detokenize(tokens)
     return sent
 
 if __name__ == "__main__":
@@ -29,7 +33,7 @@ if __name__ == "__main__":
         data = pickle.load(dFile)
 
     lines = []
-    for line in data:
+    for i, line in enumerate(data):
         sent = negateSentence(line[0])
         
         if line[0] == sent:
@@ -37,12 +41,12 @@ if __name__ == "__main__":
             print()
         else:
             if int(line[1]) == 1:
-                print('IRONIC --> UNIRONIC')
+                print(f'Line {i}: IRONIC --> UNIRONIC')
                 print(f'{line[0]}')
                 print(f'{sent}')
                 print()
             elif int(line[1]) == -1:
-                print('UNIRONIC --> IRONIC')
+                print(f'Line {i}: UNIRONIC --> IRONIC')
                 print(f'{line[0]}')
                 print(f'{sent}')
                 print()

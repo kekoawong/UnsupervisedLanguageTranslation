@@ -5,6 +5,7 @@ from nltk.tokenize import word_tokenize
 import emoji
 import re
 import pickle
+from nltk.tokenize.treebank import TreebankWordDetokenizer
 
 def cleaner(line):
     line = re.sub("@[A-Za-z0-9]+","",line) #Remove @ sign
@@ -17,7 +18,10 @@ def cleaner(line):
     line = " ".join(line.split())
     line = ''.join(c for c in line if c not in emoji.UNICODE_EMOJI) #Remove Emojis
     line = line.replace("#", "").replace("_", " ") #Remove hashtag sign but keep the text
-    #line = " ".join(w for w in nltk.wordpunct_tokenize(line))
+
+    # tokenize and retokenize into better format
+    tokens = nltk.word_tokenize(str(line))
+    line = TreebankWordDetokenizer().detokenize(tokens)
     return line
 
 if __name__ == "__main__":
