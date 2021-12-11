@@ -25,7 +25,7 @@ def trainModel(m, opt, inputData, targetData):
         train_target_words += len(target_words) # includes EOS
 
     print(f'        train_loss={train_loss} train_ppl={math.exp(train_loss/train_target_words)}', flush=True)
-    return (m, opt)
+    return m, opt
 
 
 if __name__ == "__main__":
