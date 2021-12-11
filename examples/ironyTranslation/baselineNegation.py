@@ -15,6 +15,10 @@ def negateSentence(sent):
             tokens.insert(ind, "not")
             sent = TreebankWordDetokenizer().detokenize(tokens)
             break
+        else:
+            tokens.insert(0, "not")
+            sent = TreebankWordDetokenizer().detokenize(tokens)
+            break
     return sent
 
 if __name__ == "__main__":
