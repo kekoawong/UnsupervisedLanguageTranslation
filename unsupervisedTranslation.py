@@ -77,21 +77,22 @@ if __name__ == "__main__":
 
             # train target to foreign
             for epoch in range(numEpochs):
+                # shuffle data
+                traindata = list(zip(targetPred, foreignTrain))
                 random.shuffle(traindata)
 
                 ### Update model on train
                 train_loss = 0.
-                train_ewords = 0
-                for fwords, ewords in progress(traindata):
-                    loss = -m.logprob(fwords, ewords)
+                train_fwords = 0
+                for twords, fwords in progress(traindata):
+                    loss = -m.logprob(twords, fwords)
                     opt.zero_grad()
                     loss.backward()
                     opt.step()
                     train_loss += loss.item()
-                    train_ewords += len(ewords) # includes EOS
+                    train_fwords += len(fwords) # includes EOS
 
                 ### Validate on dev set and print out a few translations
-                
                 dev_loss = 0.
                 dev_ewords = 0
                 for line_num, (fwords, ewords) in enumerate(devdata):
@@ -112,7 +113,6 @@ if __name__ == "__main__":
             m = best_model
 
         ### Translate test set
-
         if args.infile:
             with open(args.outfile, 'w') as outfile:
                 for fwords in read_mono(args.infile):
