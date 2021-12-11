@@ -65,9 +65,9 @@ if __name__ == "__main__":
     import argparse, sys
     
     parser = argparse.ArgumentParser()
-    parser.add_argument('--dataf', type=str, help='foreign language data')
-    parser.add_argument('--datat', type=str, help='target language data')
-    parser.add_argument('--initial', dest='initial', type=str, help='Initial rough translation of foreign language data into target language')
+    parser.add_argument('-f', '--dataf', dest='dataf', type=str, help='foreign language data')
+    parser.add_argument('-t', '--datat', dest='datat', type=str, help='target language data')
+    parser.add_argument('--initial', dest='initial', type=str, help='Initial rough translation of target language from foreign language data')
     parser.add_argument('--percentTrain', type=str, help='Percent to be used for training data (in decimal form), the remaining will be split between dev and test')
     parser.add_argument('--epochs', '-e', dest='epochs', type=str, help='Number of epochs to train per model per iteration')
     parser.add_argument('-iterations', '-i', dest='iterations', type=str, help='Number of epochs to train per model per iteration')
@@ -121,6 +121,7 @@ if __name__ == "__main__":
     # start training
     if args.dataf and args.initial and args.datat:
 
+        print("Starting to train")
         # set variables
         numIterations = 5 if not args.iterations else int(args.iterations)
         numEpochs = 3 if not args.epochs else int(args.epochs)
