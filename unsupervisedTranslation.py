@@ -27,6 +27,39 @@ def trainModel(m, opt, inputData, targetData):
     print(f'        train_loss={train_loss} train_ppl={math.exp(train_loss/train_target_words)}', flush=True)
     return m, opt
 
+def validateDev(m, inputData, targetData):
+    ### Validate on dev set and print out a few translations
+    devdata = list(zip(inputData, targetData))
+    dev_loss = 0.
+    dev_ewords = 0
+    for line_num, (fwords, twords) in enumerate(devdata):
+        dev_loss -= m.logprob(fwords, twords).item()
+        dev_ewords += len(twords) # includes EOS
+        if line_num < 10:
+            translation = m.translate(fwords)
+            print(' '.join(translation))
+
+    print(f'        dev_ppl={math.exp(dev_loss/dev_ewords)}', flush=True)
+    return dev_loss
+
+def outputPred(m, inputData):
+    outputPred = []
+    for words in inputData:
+        translation = m.translate(words)
+        outputPred.append(translation)
+    return outputPred
+
+
+def outputTest(m, fileName, inputData):
+    fileN = f'{fileName}-{dev_loss}'
+    with open(fileN, 'w') as outfile:
+        for fwords in inputData:
+            translation = m.translate(fwords)
+            initialSent = ' '.join(fwords)
+            translatedSent = ' '.join(translation)
+            print(f'{initialSent}    {translatedSent}', file=outfile)
+
+    return
 
 if __name__ == "__main__":
     import argparse, sys
@@ -38,7 +71,7 @@ if __name__ == "__main__":
     parser.add_argument('--percentTrain', type=str, help='Percent to be used for training data (in decimal form), the remaining will be split between dev and test')
     parser.add_argument('--epochs', '-e', dest='epochs', type=str, help='Number of epochs to train per model per iteration')
     parser.add_argument('-iterations', '-i', dest='iterations', type=str, help='Number of epochs to train per model per iteration')
-    parser.add_argument('-o', '--outfile', dest='iterations', type=str, help='write translations to file')
+    parser.add_argument('-o', '--outfile', dest='outfile', type=str, help='write translations to file')
     parser.add_argument('--load', type=str, help='load model from file')
     parser.add_argument('--save', type=str, help='save model in file')
     args = parser.parse_args()
@@ -57,7 +90,7 @@ if __name__ == "__main__":
 
         # split training and testing data
         percentTrain = 0.9 if not args.percentTrain else float(args.percentTrain)
-        foreignTrain, foreignTest, initialTrain, initialTest, targetTrain, targetTest = train_test_split(dataf, initialTranslation, datat, test_size=1-percentTrain)
+        foreignTrain, foreignTest, targetTrain, targetTest = train_test_split(dataf, datat, test_size=1-percentTrain)
         # further split test data into dev and test
         foreignDev, foreignTest, targetDev, targetTest = train_test_split(foreignTest, targetTest, test_size=0.5)
 
@@ -69,8 +102,8 @@ if __name__ == "__main__":
             fvocab |= fwords
         for twords in targetTrain:
             tvocab |= twords
-        for roughWords in initialTrain:
-            initialVocab |= roughWords
+        # for roughWords in initialTrain:
+        #     initialVocab |= roughWords
 
         # Create initial translation models
         # Do we need to update vocabs?
@@ -97,40 +130,62 @@ if __name__ == "__main__":
         opt2 = torch.optim.Adam(foreign_to_target.parameters(), lr=0.0003)
 
         # initialize data
-        targetPred = initialTrain
+        targetPred = initialTranslation
 
         for iteration in range(numIterations):
 
             # train target to foreign
             print(f'Iteration {iteration+1}/{numIterations}, Target to Foreign:')
+            # set data
+            predTrain, predTest = train_test_split(targetPred, test_size=1-percentTrain)
+            predDev, predTest = train_test_split(predTest, test_size=0.5)
+
             for epoch in range(numEpochs):
                 print(f'    Epoch {epoch+1}/{numEpochs}:')
                 # train model
-                target_to_foreign, opt1 = trainModel(target_to_foreign, opt1, targetPred, foreignTrain)
+                target_to_foreign, opt1 = trainModel(target_to_foreign, opt1, predTrain, foreignTrain)
 
-                ### Validate on dev set and print out a few translations
-                dev_loss = 0.
-                dev_ewords = 0
-                for line_num, (fwords, ewords) in enumerate(devdata):
-                    dev_loss -= m.logprob(fwords, ewords).item()
-                    dev_ewords += len(ewords) # includes EOS
-                    if line_num < 10:
-                        translation = m.translate(fwords)
-                        print(' '.join(translation))
-
+                # validate dev
+                dev_loss = validateDev(target_to_foreign, predDev, targetDev)
                 if best_dev_loss is None or dev_loss < best_dev_loss:
-                    best_model = copy.deepcopy(m)
+                    best_model_tf = copy.deepcopy(target_to_foreign)
                     if args.save:
-                        torch.save(m, args.save)
+                        torch.save(target_to_foreign, args.save)
+
+                    ### Translate test set if good dev scoring
+                    if args.outfile:
+                        outputTest(target_to_foreign, args.outfile, predTest)
+
                     best_dev_loss = dev_loss
+            # update model
+            target_to_foreign = best_model_tf
 
-                print(f'[{epoch+1}] train_loss={train_loss} train_ppl={math.exp(train_loss/train_ewords)} dev_ppl={math.exp(dev_loss/dev_ewords)}', flush=True)
-                
-            m = best_model
+            # train foreign to target
+            print(f'Iteration {iteration+1}/{numIterations}, Foreign to Target:')
+            # set data
+            foreignPred = outputPred(target_to_foreign, targetPred)
+            predTrain, predTest = train_test_split(foreignPred, test_size=1-percentTrain)
+            predDev, predTest = train_test_split(predTest, test_size=0.5)
 
-        ### Translate test set
-        if args.infile:
-            with open(args.outfile, 'w') as outfile:
-                for fwords in read_mono(args.infile):
-                    translation = m.translate(fwords)
-                    print(' '.join(translation), file=outfile)
+            for epoch in range(numEpochs):
+                print(f'    Epoch {epoch+1}/{numEpochs}:')
+                # train model
+                foreign_to_target, opt1 = trainModel(foreign_to_target, opt1, predTrain, foreignTrain)
+
+                # validate dev
+                dev_loss = validateDev(foreign_to_target, predDev, targetDev)
+                if best_dev_loss is None or dev_loss < best_dev_loss:
+                    best_model_ft = copy.deepcopy(foreign_to_target)
+                    if args.save:
+                        torch.save(foreign_to_target, args.save)
+
+                    ### Translate test set if good dev scoring
+                    if args.outfile:
+                        outputTest(foreign_to_target, args.outfile, predTest)
+
+                    best_dev_loss = dev_loss
+            # update model
+            foreign_to_target = best_model_ft
+
+            # update next iteration data
+            targetPred = outputPred(foreign_to_target, foreignPred)
