@@ -4,11 +4,11 @@ import csv
 
 
 if __name__ == "__main__":
-    inputFile1 = '../data/redditIrony.csv'
-    inputFile2 = '../data/twitterTrain.csv'
-    inputFile3 = '../data/twitterTest.csv'
-    ironicSenFile = '../data/ironicSentences.txt'
-    unironicSenFile = '../data/unironicSentences.txt'
+    inputFile1 = 'data/redditIrony.csv'
+    inputFile2 = 'data/twitterTrain.csv'
+    inputFile3 = 'data/twitterTest.csv'
+    ironicSenFile = 'data/ironicSentences.txt'
+    unironicSenFile = 'data/unironicSentences.txt'
 
     iFile = open(ironicSenFile, 'w')
     uFile = open(unironicSenFile, 'w')
