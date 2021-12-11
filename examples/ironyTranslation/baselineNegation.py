@@ -4,6 +4,7 @@ from nltk.tokenize.treebank import TreebankWordDetokenizer
 
 def negateSentence(sent):
     # do it twice because better conversion
+    words = sent.split()
     tokens = nltk.word_tokenize(str(sent))
     sent = TreebankWordDetokenizer().detokenize(tokens)
     prev = sent
@@ -11,18 +12,19 @@ def negateSentence(sent):
     for word,pos in nltk.pos_tag(tokens):
         if (pos.startswith("J")):
             ind = tokens.index(word)
-            tokens.insert(ind, "not")
-            sent = TreebankWordDetokenizer().detokenize(tokens)
+            words.insert(ind, "not")
+            sent = ' '.join(words)
             break
         elif (pos.startswith("V")):
             ind = tokens.index(word) + 1
-            tokens.insert(ind, "not")
-            sent = TreebankWordDetokenizer().detokenize(tokens)
+            words.insert(ind, "not")
+            sent = ' '.join(words)
             break
+    
 
     if prev == sent:
-        tokens.insert(0, "not")
-        sent = TreebankWordDetokenizer().detokenize(tokens)
+        words.insert(0, "not")
+        sent = ' '.join(words)
     return sent
 
 if __name__ == "__main__":

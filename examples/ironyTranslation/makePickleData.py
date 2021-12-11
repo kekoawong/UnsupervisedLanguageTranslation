@@ -22,6 +22,8 @@ def cleaner(line):
     # tokenize and retokenize into better format
     tokens = nltk.word_tokenize(str(line))
     line = TreebankWordDetokenizer().detokenize(tokens)
+    tokens = nltk.word_tokenize(str(line))
+    line = TreebankWordDetokenizer().detokenize(tokens)
     return line
 
 if __name__ == "__main__":
