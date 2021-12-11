@@ -10,7 +10,7 @@ if __name__ == "__main__":
     parser.add_argument('--dataf', type=str, help='foreign language data')
     parser.add_argument('--datat', type=str, help='target language data')
     parser.add_argument('--initial', 'infile', dest='initial', type=str, help='Initial rough translation of foreign language data into target language')
-    parser.add_argument('--percentTest', type=str, help='Percent to be used for testing data (in decimal form), the remaining will be used for training')
+    parser.add_argument('--percentTrain', type=str, help='Percent to be used for training data (in decimal form), the remaining will be split between dev and test')
     parser.add_argument('--epochs', '-e', dest='epochs', type=str, help='Number of epochs to train per model per iteration')
     parser.add_argument('-iterations', '-i', dest='iterations', type=str, help='Number of epochs to train per model per iteration')
     parser.add_argument('-o', '--outfile', dest='iterations', type=str, help='write translations to file')
@@ -31,9 +31,10 @@ if __name__ == "__main__":
         initialTranslation = read_mono(args.initial)
 
         # split training and testing data
-        percentTest = 0.1 if not args.percentTrain else float(args.percentTest)
-        foreignTrain, foreignTest, initialTrain, initialTest = train_test_split(dataf, initialTranslation, test_size=percentTest)
-        targetTrain, targetTest = train_test_split(datat, test_size=percentTest)
+        percentTrain = 0.9 if not args.percentTrain else float(args.percentTrain)
+        foreignTrain, foreignTest, initialTrain, initialTest, targetTrain, targetTest = train_test_split(dataf, initialTranslation, datat, test_size=1-percentTrain)
+        # further split test data into dev and test
+        foreignDev, foreignTest, targetDev, targetTest = train_test_split(foreignTest, targetTest, test_size=0.5)
 
         # Create vocabularies
         fvocab = Vocab()
