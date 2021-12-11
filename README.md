@@ -15,3 +15,6 @@ Pass the output data of each system into the input of the next system.
 System 1: Foreign --> Target  
 System 2: Target --> Foreign  
 No parallel text.  
+
+Run command:  
+python3 unsupervisedTranslation.py --dataf 
