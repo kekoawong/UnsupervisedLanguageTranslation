@@ -12,7 +12,8 @@ import time
 totalLinesLeft = 0
 timePerLine = 0
 timeLeft = timePerLine*totalLinesLeft
-startTime = time.time()
+totalstarttime = time.time()
+epochstartTime = time.time()
     
 class Encoder(torch.nn.Module):
     """RNN encoder."""
@@ -170,6 +171,7 @@ if __name__ == "__main__":
         best_dev_loss = None
         totalLen = len(traindata)
         for epoch in range(10):
+            epochstartTime = time.time()
             random.shuffle(traindata)
 
             ### Update model on train
@@ -186,7 +188,7 @@ if __name__ == "__main__":
 
                 if i % 100 == 0 and i != 0:
                     print(f'On line {i}/{totalLen}')
-                    avgTime = (time.time() - startTime)/i
+                    avgTime = (time.time() - epochstartTime)/i
                     timeLeftEpoch = avgTime * (totalLen-i)
                     print(f'Time left for epoch: {round(timeLeftEpoch/60, 2)} mins')
 
@@ -205,16 +207,15 @@ if __name__ == "__main__":
                 best_model = copy.deepcopy(m)
                 if args.save:
                     torch.save(m, args.save)
+
+                ### Translate test set
+                if args.infile:
+                    with open(args.outfile, 'w') as outfile:
+                        for fwords in read_mono(args.infile):
+                            translation = m.translate(fwords)
+                            print(' '.join(translation), file=outfile)
                 best_dev_loss = dev_loss
 
             print(f'[{epoch+1}] train_loss={train_loss} train_ppl={math.exp(train_loss/train_ewords)} dev_ppl={math.exp(dev_loss/dev_ewords)}', flush=True)
             
         m = best_model
-
-    ### Translate test set
-
-    if args.infile:
-        with open(args.outfile, 'w') as outfile:
-            for fwords in read_mono(args.infile):
-                translation = m.translate(fwords)
-                print(' '.join(translation), file=outfile)

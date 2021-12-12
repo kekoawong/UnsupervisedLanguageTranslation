@@ -5,10 +5,12 @@ import random
 import time
 
 # declare variables for timing
+# declare variables for timing
 totalLinesLeft = 0
 timePerLine = 0
 timeLeft = timePerLine*totalLinesLeft
-startTime = time.time()
+totalstarttime = time.time()
+epochstartTime = time.time()
 
 def trainModel(m, opt, inputData, targetData):
     '''
@@ -34,7 +36,7 @@ def trainModel(m, opt, inputData, targetData):
         if i % 100 == 0 and i != 0:
             print(f'        On line {i}/{totalLen}')
             print(len(target_words))
-            avgTime = (time.time() - startTime)/i
+            avgTime = (time.time() - epochstartTime)/i
             timeLeftEpoch = avgTime * (totalLen-i)
             print(f'        Time left for epoch: {round(timeLeftEpoch/60, 0)} mins')
 
@@ -163,6 +165,7 @@ if __name__ == "__main__":
             predDev, predTest = train_test_split(predTest, test_size=0.5)
 
             for epoch in range(numEpochs):
+                epochstartTime = time.time()
                 print(f'    Epoch {epoch+1}/{numEpochs}:')
                 # train model
                 target_to_foreign, opt_tf = trainModel(target_to_foreign, opt_tf, predTrain, foreignTrain)
