@@ -2,6 +2,13 @@ import torch
 from translationModel import *
 from sklearn.model_selection import train_test_split
 import random
+import time
+
+# declare variables for timing
+totalLinesLeft = 0
+timePerLine = 0
+timeLeft = timePerLine*totalLinesLeft
+startTime = time.time()
 
 def trainModel(m, opt, inputData, targetData):
     '''
@@ -11,18 +18,24 @@ def trainModel(m, opt, inputData, targetData):
     '''
     # shuffle data
     traindata = list(zip(inputData, targetData))
+    totalLen = len(inputData)
     random.shuffle(traindata)
 
     ### Update model on train
     train_loss = 0.
     train_target_words = 0
-    for input_words, target_words in progress(traindata):
+    for i, (input_words, target_words) in enumerate(progress(traindata)):
         loss = -m.logprob(input_words, target_words)
         opt.zero_grad()
         loss.backward()
         opt.step()
         train_loss += loss.item()
         train_target_words += len(target_words) # includes EOS
+        if i % 100 == 0 and i != 0:
+            print(f'        On line {i}/{totalLen}')
+            avgTime = (time.time() - startTime)/i
+            timeLeftEpoch = avgTime * (totalLen-i)
+            print(f'        Time left for epoch: {round(timeLeftEpoch/60, 0)} mins')
 
     print(f'        train_loss={train_loss} train_ppl={math.exp(train_loss/train_target_words)}', flush=True)
     return m, opt
