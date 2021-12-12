@@ -4,7 +4,7 @@ device = 'cpu'
 import math, collections.abc, random, copy
 
 from layers import *
-from model2 import Vocab, read_parallel, read_mono, progress
+from translationModel import Vocab, read_parallel, read_mono, progress
     
 class Encoder(torch.nn.Module):
     """RNN encoder."""
