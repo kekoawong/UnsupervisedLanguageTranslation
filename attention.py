@@ -5,6 +5,14 @@ import math, collections.abc, random, copy
 
 from layers import *
 from translationModel import Vocab, read_parallel, read_mono, progress
+
+import time
+
+# declare variables for timing
+totalLinesLeft = 0
+timePerLine = 0
+timeLeft = timePerLine*totalLinesLeft
+startTime = time.time()
     
 class Encoder(torch.nn.Module):
     """RNN encoder."""
@@ -160,6 +168,7 @@ if __name__ == "__main__":
         opt = torch.optim.Adam(m.parameters(), lr=0.0003)
 
         best_dev_loss = None
+        totalLen = len(traindata)
         for epoch in range(10):
             random.shuffle(traindata)
 
@@ -167,13 +176,19 @@ if __name__ == "__main__":
 
             train_loss = 0.
             train_ewords = 0
-            for fwords, ewords in progress(traindata):
+            for i, (fwords, ewords) in enumerate(progress(traindata)):
                 loss = -m.logprob(fwords, ewords)
                 opt.zero_grad()
                 loss.backward()
                 opt.step()
                 train_loss += loss.item()
                 train_ewords += len(ewords)
+
+                if i % 100 == 0 and i != 0:
+                    print(f'On line {i}/{totalLen}')
+                    avgTime = (time.time() - startTime)/i
+                    timeLeftEpoch = avgTime * (totalLen-i)
+                    print(f'Time left for epoch: {round(timeLeftEpoch/60, 2)} mins')
 
             ### Validate on dev set and print out a few translations
             

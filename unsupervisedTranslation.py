@@ -151,6 +151,9 @@ if __name__ == "__main__":
         # initialize data
         targetPred = initialTranslation
 
+        best_dev_loss1 = None
+        best_dev_loss2 = None
+
         for iteration in range(numIterations):
 
             # train target to foreign
@@ -166,7 +169,7 @@ if __name__ == "__main__":
 
                 # validate dev
                 dev_loss = validateDev(target_to_foreign, predDev, targetDev)
-                if best_dev_loss is None or dev_loss < best_dev_loss:
+                if best_dev_loss1 is None or dev_loss < best_dev_loss1:
                     best_model_tf = copy.deepcopy(target_to_foreign)
                     if args.savetf:
                         torch.save(target_to_foreign, args.savetf)
@@ -175,7 +178,7 @@ if __name__ == "__main__":
                     if args.outfile:
                         outputTest(target_to_foreign, args.outfile, predTest, 'foreign')
 
-                    best_dev_loss = dev_loss
+                    best_dev_loss1 = dev_loss
             # update model
             target_to_foreign = best_model_tf
 
@@ -193,7 +196,7 @@ if __name__ == "__main__":
 
                 # validate dev
                 dev_loss = validateDev(foreign_to_target, predDev, targetDev)
-                if best_dev_loss is None or dev_loss < best_dev_loss:
+                if best_dev_loss2 is None or dev_loss < best_dev_loss2:
                     best_model_ft = copy.deepcopy(foreign_to_target)
                     if args.saveft:
                         torch.save(foreign_to_target, args.saveft)
@@ -202,7 +205,7 @@ if __name__ == "__main__":
                     if args.outfile:
                         outputTest(foreign_to_target, args.outfile, predTest, 'target')
 
-                    best_dev_loss = dev_loss
+                    best_dev_loss2 = dev_loss
             # update model
             foreign_to_target = best_model_ft
 
