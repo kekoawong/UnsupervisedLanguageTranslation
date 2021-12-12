@@ -66,17 +66,21 @@ def validateDev(m, inputData, targetData):
 def outputPred(m, inputData):
     outputPred = []
     for words in inputData:
-        translation = m.translate(words)
+        try: 
+            translation = m.translate(words)
+        except TypeError:
+            print(f'Bad words: {words}')
+            translation = []
         outputPred.append(translation)
     return outputPred
 
 
-def outputTest(m, fileName, inputData, predType):
+def outputTest(m, fileName, inputData, predType, dev_loss):
     '''
     Writes outputs to file
     predType is the type contained in the file, either target or foreign
     '''
-    fileN = f'{fileName}-{predType}-{dev_loss}'
+    fileN = f'{fileName}-{predType}-{round(dev_loss, 3)}'
     with open(fileN, 'w') as outfile:
         for fwords in inputData:
             translation = m.translate(fwords)
@@ -115,10 +119,10 @@ if __name__ == "__main__":
         initialTranslation = read_mono(args.initial)
 
         # temporary
-        num = 500
-        dataf = dataf[:num]
-        datat = datat[:num]
-        initialTranslation = initialTranslation[:num]
+        # num = 500
+        # dataf = dataf[:num]
+        # datat = datat[:num]
+        # initialTranslation = initialTranslation[:num]
 
         # Create vocabularies
         fvocab = Vocab()
@@ -183,7 +187,7 @@ if __name__ == "__main__":
 
                     ### Translate test set if good dev scoring
                     if args.outfile:
-                        outputTest(target_to_foreign, args.outfile, predTargetTest, 'foreign')
+                        outputTest(target_to_foreign, args.outfile, predTargetTest, 'foreign', dev_loss)
 
                     best_dev_loss1 = dev_loss
             # update model
@@ -211,7 +215,7 @@ if __name__ == "__main__":
 
                     ### Translate test set if good dev scoring
                     if args.outfile:
-                        outputTest(foreign_to_target, args.outfile, predForeignTest, 'target')
+                        outputTest(foreign_to_target, args.outfile, predForeignTest, 'target', dev_loss)
 
                     best_dev_loss2 = dev_loss
             # update model
