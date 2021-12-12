@@ -27,6 +27,9 @@ def trainModel(m, opt, inputData, targetData):
     train_loss = 0.
     train_target_words = 0
     for i, (input_words, target_words) in enumerate(progress(traindata)):
+        # skip if empty
+        if len(input_words) == 0 or len(target_words) == 0:
+            continue
         loss = -m.logprob(input_words, target_words)
         opt.zero_grad()
         loss.backward()
@@ -47,6 +50,9 @@ def validateDev(m, inputData, targetData):
     dev_loss = 0.
     dev_ewords = 0
     for line_num, (fwords, twords) in enumerate(devdata):
+        # skip if empty
+        if len(fwords) == 0 or len(twords) == 0:
+            continue
         dev_loss -= m.logprob(fwords, twords).item()
         dev_ewords += len(twords) # includes EOS
         if line_num < 10:
@@ -105,13 +111,14 @@ if __name__ == "__main__":
 
         # Read in data
         dataf = read_mono(args.dataf)
-        datat = read_mono(args.dataf)
+        datat = read_mono(args.datat)
         initialTranslation = read_mono(args.initial)
 
-        # split training and testing data
-        foreignTrain, foreignTest, targetTrain, targetTest = train_test_split(dataf, datat, test_size=1-percentTrain)
-        # further split test data into dev and test
-        # foreignDev, foreignTest, targetDev, targetTest = train_test_split(foreignTest, targetTest, test_size=0.5)
+        # temporary
+        num = 500
+        dataf = dataf[:num]
+        datat = datat[:num]
+        initialTranslation = initialTranslation[:num]
 
         # Create vocabularies
         fvocab = Vocab()
@@ -120,8 +127,6 @@ if __name__ == "__main__":
             fvocab |= fwords
         for twords in datat:
             tvocab |= twords
-        # for roughWords in initialTrain:
-        #     initialVocab |= roughWords
 
         # Create initial translation models
         # Do we need to update vocabs?

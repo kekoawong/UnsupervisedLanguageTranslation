@@ -55,6 +55,7 @@ class Embedding(torch.nn.Module):
         """
 
         if not (isinstance(inp, int) or inp.dtype in [torch.int32, torch.int64]):
+            print(f'Bad input: {inp}')
             raise TypeError('input should be an integer or tensor of integers')
         
         emb = self.W[inp]
