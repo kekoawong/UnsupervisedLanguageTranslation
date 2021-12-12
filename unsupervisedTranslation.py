@@ -33,6 +33,7 @@ def trainModel(m, opt, inputData, targetData):
         train_target_words += len(target_words) # includes EOS
         if i % 100 == 0 and i != 0:
             print(f'        On line {i}/{totalLen}')
+            print(len(target_words))
             avgTime = (time.time() - startTime)/i
             timeLeftEpoch = avgTime * (totalLen-i)
             print(f'        Time left for epoch: {round(timeLeftEpoch/60, 0)} mins')
@@ -115,7 +116,6 @@ if __name__ == "__main__":
         # Create vocabularies
         fvocab = Vocab()
         tvocab = Vocab()
-        initialVocab = Vocab() # this should be same as the 
         for fwords in foreignTrain:
             fvocab |= fwords
         for twords in targetTrain:
@@ -145,8 +145,8 @@ if __name__ == "__main__":
         numEpochs = 3 if not args.epochs else int(args.epochs)
 
         # declare optimizers
-        opt1 = torch.optim.Adam(target_to_foreign.parameters(), lr=0.0003)
-        opt2 = torch.optim.Adam(foreign_to_target.parameters(), lr=0.0003)
+        opt_tf = torch.optim.Adam(target_to_foreign.parameters(), lr=0.0003)
+        opt_ft = torch.optim.Adam(foreign_to_target.parameters(), lr=0.0003)
 
         # initialize data
         targetPred = initialTranslation
@@ -162,7 +162,7 @@ if __name__ == "__main__":
             for epoch in range(numEpochs):
                 print(f'    Epoch {epoch+1}/{numEpochs}:')
                 # train model
-                target_to_foreign, opt1 = trainModel(target_to_foreign, opt1, predTrain, foreignTrain)
+                target_to_foreign, opt_tf = trainModel(target_to_foreign, opt_tf, predTrain, foreignTrain)
 
                 # validate dev
                 dev_loss = validateDev(target_to_foreign, predDev, targetDev)
@@ -189,7 +189,7 @@ if __name__ == "__main__":
             for epoch in range(numEpochs):
                 print(f'    Epoch {epoch+1}/{numEpochs}:')
                 # train model
-                foreign_to_target, opt1 = trainModel(foreign_to_target, opt1, predTrain, foreignTrain)
+                foreign_to_target, opt_ft = trainModel(foreign_to_target, opt_ft, predTrain, foreignTrain)
 
                 # validate dev
                 dev_loss = validateDev(foreign_to_target, predDev, targetDev)

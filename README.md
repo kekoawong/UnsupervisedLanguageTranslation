@@ -16,5 +16,7 @@ System 1: Foreign --> Target
 System 2: Target --> Foreign  
 No parallel text.  
 
-Run example command:  
+Run example command to train irony:  
 python3 unsupervisedTranslation.py --dataf examples/ironyTranslation/data/ironicSentences.txt --datat examples/ironyTranslation/data/unironicSentences.txt --initial examples/ironyTranslation/data/roughUnironicSent.txt -o examples/ironyTranslation/outputs/ironic_to_unironic --savetf examples/ironyTranslation/models/target-forein.torch --saveft examples/ironyTranslation/models/foreign-target.torch
+
+Run example command to train Backstroke of the West data:  
