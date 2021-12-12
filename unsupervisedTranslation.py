@@ -71,6 +71,7 @@ def outputPred(m, inputData):
         except TypeError:
             print(f'Bad words: {words}')
             translation = []
+        translation.append('<EOS>')
         outputPred.append(translation)
     return outputPred
 
