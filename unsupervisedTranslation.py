@@ -99,8 +99,8 @@ if __name__ == "__main__":
     parser.add_argument('-t', '--datat', dest='datat', type=str, help='target language data')
     parser.add_argument('--initial', dest='initial', type=str, help='Initial rough translation of target language from foreign language data')
     parser.add_argument('--percentTrain', type=str, help='Percent to be used for training data (in decimal form), the remaining will be split between dev and test')
-    parser.add_argument('--epochs', '-e', dest='epochs', type=str, help='Number of epochs to train per model per iteration')
-    parser.add_argument('-iterations', '-i', dest='iterations', type=str, help='Number of epochs to train per model per iteration')
+    parser.add_argument('--epochs', '-e', dest='epochs', type=int, help='Number of epochs to train per model per iteration')
+    parser.add_argument('--iterations', '-i', dest='iterations', type=int, help='Number of iterations to go through')
     parser.add_argument('-o', '--outfile', dest='outfile', type=str, help='write translations to file')
     parser.add_argument('--load', type=str, help='load model from file')
     parser.add_argument('--savetf', dest='savetf', type=str, help='save target to foreign model in file')
@@ -118,6 +118,12 @@ if __name__ == "__main__":
         dataf = read_mono(args.dataf)
         datat = read_mono(args.datat)
         initialTranslation = read_mono(args.initial)
+
+        # trim sets
+        maxLen = min([len(dataf), len(datat), len(initialTranslation)])
+        dataf = dataf[:maxLen]
+        datat = datat[:maxLen]
+        initialTranslation = initialTranslation[:maxLen]
 
         # temporary
         # num = 500
