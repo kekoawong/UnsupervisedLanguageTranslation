@@ -54,6 +54,7 @@ def validateDev(m, inputData, targetData):
             print(' '.join(translation))
 
     print(f'        dev_ppl={math.exp(dev_loss/dev_ewords)}', flush=True)
+    print(f'Input words: {fwords} --> Output words: {translation}')
     return dev_loss
 
 def outputPred(m, inputData):
@@ -108,17 +109,16 @@ if __name__ == "__main__":
         initialTranslation = read_mono(args.initial)
 
         # split training and testing data
-        percentTrain = 0.9 if not args.percentTrain else float(args.percentTrain)
         foreignTrain, foreignTest, targetTrain, targetTest = train_test_split(dataf, datat, test_size=1-percentTrain)
         # further split test data into dev and test
-        foreignDev, foreignTest, targetDev, targetTest = train_test_split(foreignTest, targetTest, test_size=0.5)
+        # foreignDev, foreignTest, targetDev, targetTest = train_test_split(foreignTest, targetTest, test_size=0.5)
 
         # Create vocabularies
         fvocab = Vocab()
         tvocab = Vocab()
-        for fwords in foreignTrain:
+        for fwords in dataf:
             fvocab |= fwords
-        for twords in targetTrain:
+        for twords in datat:
             tvocab |= twords
         # for roughWords in initialTrain:
         #     initialVocab |= roughWords
@@ -150,6 +150,7 @@ if __name__ == "__main__":
 
         # initialize data
         targetPred = initialTranslation
+        percentTrain = 0.9 if not args.percentTrain else float(args.percentTrain)
 
         best_dev_loss1 = None
         best_dev_loss2 = None
@@ -158,18 +159,18 @@ if __name__ == "__main__":
 
             # train target to foreign
             print(f'Iteration {iteration+1}/{numIterations}, Target to Foreign:')
-            # set data
-            predTrain, predTest = train_test_split(targetPred, test_size=1-percentTrain)
-            predDev, predTest = train_test_split(predTest, test_size=0.5)
+            # set data, need the lines in all the data to correspond
+            predTargetTrain, predTargetTest, foreignTrain, foreignTest, targetTrain, targetTest  = train_test_split(targetPred, dataf, datat, test_size=1-percentTrain)
+            predTargetDev, predTargetTest, foreignDev, foreignTest, targetDev, targetTest = train_test_split(predTargetTest, foreignTest, targetTest, test_size=0.5)
 
             for epoch in range(numEpochs):
                 epochstartTime = time.time()
                 print(f'    Epoch {epoch+1}/{numEpochs}:')
-                # train model
-                target_to_foreign, opt_tf = trainModel(target_to_foreign, opt_tf, predTrain, foreignTrain)
+                # train model, should be pred training toward the actual foreign language
+                target_to_foreign, opt_tf = trainModel(target_to_foreign, opt_tf, predTargetTrain, foreignTrain)
 
-                # validate dev
-                dev_loss = validateDev(target_to_foreign, predDev, targetDev)
+                # validate dev, should be the dif type of words, so target --> foreign
+                dev_loss = validateDev(target_to_foreign, predTargetDev, foreignDev)
                 if best_dev_loss1 is None or dev_loss < best_dev_loss1:
                     best_model_tf = copy.deepcopy(target_to_foreign)
                     if args.savetf:
@@ -177,7 +178,7 @@ if __name__ == "__main__":
 
                     ### Translate test set if good dev scoring
                     if args.outfile:
-                        outputTest(target_to_foreign, args.outfile, predTest, 'foreign')
+                        outputTest(target_to_foreign, args.outfile, predTargetTest, 'foreign')
 
                     best_dev_loss1 = dev_loss
             # update model
@@ -187,16 +188,17 @@ if __name__ == "__main__":
             print(f'Iteration {iteration+1}/{numIterations}, Foreign to Target:')
             # set data
             foreignPred = outputPred(target_to_foreign, targetPred)
-            predTrain, predTest = train_test_split(foreignPred, test_size=1-percentTrain)
-            predDev, predTest = train_test_split(predTest, test_size=0.5)
+            predForeignTrain, predForeignTest, foreignTrain, foreignTest, targetTrain, targetTest  = train_test_split(foreignPred, dataf, datat, test_size=1-percentTrain)
+            predForeignDev, predForeignTest, foreignDev, foreignTest, targetDev, targetTest = train_test_split(predForeignTest, foreignTest, targetTest, test_size=0.5)
 
             for epoch in range(numEpochs):
                 print(f'    Epoch {epoch+1}/{numEpochs}:')
-                # train model
-                foreign_to_target, opt_ft = trainModel(foreign_to_target, opt_ft, predTrain, foreignTrain)
+                epochstartTime = time.time()
+                # train model, should be pred training toward the actual target language
+                foreign_to_target, opt_ft = trainModel(foreign_to_target, opt_ft, predForeignTrain, targetTrain)
 
-                # validate dev
-                dev_loss = validateDev(foreign_to_target, predDev, targetDev)
+                # validate dev,  should be the dif type of words, so pred foreign --> actual target
+                dev_loss = validateDev(foreign_to_target, predForeignDev, targetDev)
                 if best_dev_loss2 is None or dev_loss < best_dev_loss2:
                     best_model_ft = copy.deepcopy(foreign_to_target)
                     if args.saveft:
@@ -204,7 +206,7 @@ if __name__ == "__main__":
 
                     ### Translate test set if good dev scoring
                     if args.outfile:
-                        outputTest(foreign_to_target, args.outfile, predTest, 'target')
+                        outputTest(foreign_to_target, args.outfile, predForeignTest, 'target')
 
                     best_dev_loss2 = dev_loss
             # update model
