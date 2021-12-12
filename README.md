@@ -19,6 +19,8 @@ No parallel text.
 Run example command to train irony:  
 python3 unsupervisedTranslation.py --dataf examples/ironyTranslation/data/ironicSentences.txt --datat examples/ironyTranslation/data/unironicSentences.txt --initial examples/ironyTranslation/data/roughUnironicSent.txt -o examples/ironyTranslation/outputs/ironic_to_unironic --savetf examples/ironyTranslation/models/target-forein.torch --saveft examples/ironyTranslation/models/foreign-target.torch
 
-Run example command to train Backstroke of the West data:  
+Run example command to train Backstroke of the West data: 
+python3 unsupervisedTranslation.py --dataf examples/backstrokeSubtitles/chinese.txt --datat examples/backstrokeSubtitles/english.txt --initial examples/backstrokeSubtitles/roughEnglish.txt -o examples/backstrokeSubtitles/outputs/chinese_to_english --savetf examples/backstrokeSubtitles/models/english-chinese.torch --saveft examples/backstrokeSubtitles/models/chinese-english.torch  
+
 python3 attention.py --train examples/backstrokeSubtitles/totalData.txt --dev examples/backstrokeSubtitles/chinese.txt examples/backstrokeSubtitles/chinese.txt -o examples/backstrokeSubtitles/roughEnglish.txt
 python3 attention.py --train ../hw2-kekoawong/data/train.zh-en --dev ../hw2-kekoawong/data/dev.zh-en examples/backstrokeSubtitles/chinese.txt -o examples/backstrokeSubtitles/roughEnglish.txt
