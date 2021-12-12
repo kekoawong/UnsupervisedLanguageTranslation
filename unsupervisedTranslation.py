@@ -34,11 +34,9 @@ def trainModel(m, opt, inputData, targetData):
         train_loss += loss.item()
         train_target_words += len(target_words) # includes EOS
         if i % 100 == 0 and i != 0:
-            print(f'        On line {i}/{totalLen}')
-            print(len(target_words))
             avgTime = (time.time() - epochstartTime)/i
             timeLeftEpoch = avgTime * (totalLen-i)
-            print(f'        Time left for epoch: {round(timeLeftEpoch/60, 0)} mins')
+            print(f'        On line {i}/{totalLen}. Time left for epoch: {round(timeLeftEpoch/60, 3)} mins')
 
     print(f'        train_loss={train_loss} train_ppl={math.exp(train_loss/train_target_words)}', flush=True)
     return m, opt
@@ -214,3 +212,5 @@ if __name__ == "__main__":
 
             # update next iteration data
             targetPred = outputPred(foreign_to_target, foreignPred)
+
+            print(f'Time left to complete: { (time.time() - totalstarttime) * (numIterations - 1 - iteration) }')
