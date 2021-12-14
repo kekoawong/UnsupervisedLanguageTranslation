@@ -1,0 +1,1069 @@
+Starting to train
+Iteration 1/4, Target to Foreign:
+    Epoch 1/2:
+        On line 100/5266. Time left for epoch: 2.774 mins
+        On line 200/5266. Time left for epoch: 2.505 mins
+        On line 300/5266. Time left for epoch: 2.414 mins
+        On line 400/5266. Time left for epoch: 2.369 mins
+        On line 500/5266. Time left for epoch: 2.314 mins
+        On line 600/5266. Time left for epoch: 2.242 mins
+        On line 700/5266. Time left for epoch: 2.21 mins
+        On line 800/5266. Time left for epoch: 2.144 mins
+        On line 900/5266. Time left for epoch: 2.09 mins
+        On line 1000/5266. Time left for epoch: 2.06 mins
+        On line 1100/5266. Time left for epoch: 2.024 mins
+        On line 1200/5266. Time left for epoch: 1.987 mins
+        On line 1300/5266. Time left for epoch: 1.928 mins
+        On line 1400/5266. Time left for epoch: 1.886 mins
+        On line 1500/5266. Time left for epoch: 1.848 mins
+        On line 1600/5266. Time left for epoch: 1.802 mins
+        On line 1700/5266. Time left for epoch: 1.758 mins
+        On line 1800/5266. Time left for epoch: 1.719 mins
+        On line 1900/5266. Time left for epoch: 1.677 mins
+        On line 2000/5266. Time left for epoch: 1.63 mins
+        On line 2100/5266. Time left for epoch: 1.576 mins
+        On line 2200/5266. Time left for epoch: 1.528 mins
+        On line 2300/5266. Time left for epoch: 1.479 mins
+        On line 2400/5266. Time left for epoch: 1.434 mins
+        On line 2500/5266. Time left for epoch: 1.38 mins
+        On line 2600/5266. Time left for epoch: 1.327 mins
+        On line 2700/5266. Time left for epoch: 1.275 mins
+        On line 2800/5266. Time left for epoch: 1.229 mins
+        On line 2900/5266. Time left for epoch: 1.179 mins
+        On line 3000/5266. Time left for epoch: 1.129 mins
+        On line 3100/5266. Time left for epoch: 1.08 mins
+        On line 3200/5266. Time left for epoch: 1.031 mins
+        On line 3300/5266. Time left for epoch: 0.981 mins
+        On line 3400/5266. Time left for epoch: 0.931 mins
+        On line 3500/5266. Time left for epoch: 0.882 mins
+        On line 3600/5266. Time left for epoch: 0.832 mins
+        On line 3700/5266. Time left for epoch: 0.782 mins
+        On line 3800/5266. Time left for epoch: 0.734 mins
+        On line 3900/5266. Time left for epoch: 0.685 mins
+        On line 4000/5266. Time left for epoch: 0.635 mins
+        On line 4100/5266. Time left for epoch: 0.585 mins
+        On line 4200/5266. Time left for epoch: 0.534 mins
+        On line 4300/5266. Time left for epoch: 0.484 mins
+        On line 4400/5266. Time left for epoch: 0.434 mins
+        On line 4500/5266. Time left for epoch: 0.384 mins
+        On line 4600/5266. Time left for epoch: 0.334 mins
+        On line 4700/5266. Time left for epoch: 0.284 mins
+        On line 4800/5266. Time left for epoch: 0.234 mins
+        On line 4900/5266. Time left for epoch: 0.184 mins
+        On line 5000/5266. Time left for epoch: 0.134 mins
+        On line 5100/5266. Time left for epoch: 0.083 mins
+        On line 5200/5266. Time left for epoch: 0.033 mins
+        train_loss=238716.84517630935 train_ppl=114.43639480669884
+嗨 我 们 需 要 我 们 需 要
+你 说 什 么 做 什 么
+他 们 就 是 你 们
+哪 儿
+我 知 道 你 知 道 你 知 道 你 知 道 你 的
+你 能 想 我 们
+他 是 对 了
+所 以 前 往 了
+你 不 不 不 不 不 不 不 不 不 不 不 不 不
+你 的 朋 友
+        dev_ppl=63.04757659805003
+Input words: ['yes', ',', 'sir', '<EOS>'] --> Output words: ['你', '的', '朋', '友']
+    Epoch 2/2:
+        On line 100/5266. Time left for epoch: 2.541 mins
+        On line 200/5266. Time left for epoch: 2.451 mins
+        On line 300/5266. Time left for epoch: 2.428 mins
+        On line 400/5266. Time left for epoch: 2.379 mins
+        On line 500/5266. Time left for epoch: 2.314 mins
+        On line 600/5266. Time left for epoch: 2.276 mins
+        On line 700/5266. Time left for epoch: 2.241 mins
+        On line 800/5266. Time left for epoch: 2.2 mins
+        On line 900/5266. Time left for epoch: 2.163 mins
+        On line 1000/5266. Time left for epoch: 2.118 mins
+        On line 1100/5266. Time left for epoch: 2.074 mins
+        On line 1200/5266. Time left for epoch: 2.017 mins
+        On line 1300/5266. Time left for epoch: 1.967 mins
+        On line 1400/5266. Time left for epoch: 1.926 mins
+        On line 1500/5266. Time left for epoch: 1.875 mins
+        On line 1600/5266. Time left for epoch: 1.834 mins
+        On line 1700/5266. Time left for epoch: 1.785 mins
+        On line 1800/5266. Time left for epoch: 1.729 mins
+        On line 1900/5266. Time left for epoch: 1.681 mins
+        On line 2000/5266. Time left for epoch: 1.635 mins
+        On line 2100/5266. Time left for epoch: 1.586 mins
+        On line 2200/5266. Time left for epoch: 1.534 mins
+        On line 2300/5266. Time left for epoch: 1.485 mins
+        On line 2400/5266. Time left for epoch: 1.436 mins
+        On line 2500/5266. Time left for epoch: 1.386 mins
+        On line 2600/5266. Time left for epoch: 1.337 mins
+        On line 2700/5266. Time left for epoch: 1.286 mins
+        On line 2800/5266. Time left for epoch: 1.236 mins
+        On line 2900/5266. Time left for epoch: 1.184 mins
+        On line 3000/5266. Time left for epoch: 1.135 mins
+        On line 3100/5266. Time left for epoch: 1.085 mins
+        On line 3200/5266. Time left for epoch: 1.04 mins
+        On line 3300/5266. Time left for epoch: 0.99 mins
+        On line 3400/5266. Time left for epoch: 0.938 mins
+        On line 3500/5266. Time left for epoch: 0.886 mins
+        On line 3600/5266. Time left for epoch: 0.836 mins
+        On line 3700/5266. Time left for epoch: 0.786 mins
+        On line 3800/5266. Time left for epoch: 0.737 mins
+        On line 3900/5266. Time left for epoch: 0.686 mins
+        On line 4000/5266. Time left for epoch: 0.635 mins
+        On line 4100/5266. Time left for epoch: 0.585 mins
+        On line 4200/5266. Time left for epoch: 0.535 mins
+        On line 4300/5266. Time left for epoch: 0.484 mins
+        On line 4400/5266. Time left for epoch: 0.434 mins
+        On line 4500/5266. Time left for epoch: 0.384 mins
+        On line 4600/5266. Time left for epoch: 0.334 mins
+        On line 4700/5266. Time left for epoch: 0.284 mins
+        On line 4800/5266. Time left for epoch: 0.233 mins
+        On line 4900/5266. Time left for epoch: 0.183 mins
+        On line 5000/5266. Time left for epoch: 0.133 mins
+        On line 5100/5266. Time left for epoch: 0.083 mins
+        On line 5200/5266. Time left for epoch: 0.033 mins
+        train_loss=184524.4382802248 train_ppl=39.01560455969343
+嘿 我 们 需 要 一 个
+你 在 那 个 女 孩
+他 们 来 了
+在 哪 儿
+我 们 知 道 你 知 道 你
+你 能 帮 忙 我 们
+他 是 是 的 是 啊
+所 有 一 个
+你 不 要 你 不 要 你 不 能
+你 的 朋 友
+        dev_ppl=48.06199870518898
+Input words: ['yes', ',', 'sir', '<EOS>'] --> Output words: ['你', '的', '朋', '友']
+Iteration 1/4, Foreign to Target:
+    Epoch 1/2:
+        On line 100/5266. Time left for epoch: 2.975 mins
+        On line 200/5266. Time left for epoch: 2.906 mins
+        On line 300/5266. Time left for epoch: 2.742 mins
+        On line 400/5266. Time left for epoch: 2.675 mins
+        On line 500/5266. Time left for epoch: 2.637 mins
+        On line 600/5266. Time left for epoch: 2.577 mins
+        On line 700/5266. Time left for epoch: 2.506 mins
+        On line 800/5266. Time left for epoch: 2.482 mins
+        On line 900/5266. Time left for epoch: 2.452 mins
+        On line 1000/5266. Time left for epoch: 2.377 mins
+        On line 1100/5266. Time left for epoch: 2.316 mins
+        On line 1200/5266. Time left for epoch: 2.243 mins
+        On line 1300/5266. Time left for epoch: 2.196 mins
+        On line 1400/5266. Time left for epoch: 2.134 mins
+        On line 1500/5266. Time left for epoch: 2.075 mins
+        On line 1600/5266. Time left for epoch: 2.033 mins
+        On line 1700/5266. Time left for epoch: 1.969 mins
+        On line 1800/5266. Time left for epoch: 1.919 mins
+        On line 1900/5266. Time left for epoch: 1.863 mins
+        On line 2000/5266. Time left for epoch: 1.81 mins
+        On line 2100/5266. Time left for epoch: 1.747 mins
+        On line 2200/5266. Time left for epoch: 1.7 mins
+        On line 2300/5266. Time left for epoch: 1.646 mins
+        On line 2400/5266. Time left for epoch: 1.586 mins
+        On line 2500/5266. Time left for epoch: 1.529 mins
+        On line 2600/5266. Time left for epoch: 1.471 mins
+        On line 2700/5266. Time left for epoch: 1.421 mins
+        On line 2800/5266. Time left for epoch: 1.362 mins
+        On line 2900/5266. Time left for epoch: 1.311 mins
+        On line 3000/5266. Time left for epoch: 1.258 mins
+        On line 3100/5266. Time left for epoch: 1.201 mins
+        On line 3200/5266. Time left for epoch: 1.147 mins
+        On line 3300/5266. Time left for epoch: 1.09 mins
+        On line 3400/5266. Time left for epoch: 1.033 mins
+        On line 3500/5266. Time left for epoch: 0.979 mins
+        On line 3600/5266. Time left for epoch: 0.924 mins
+        On line 3700/5266. Time left for epoch: 0.87 mins
+        On line 3800/5266. Time left for epoch: 0.815 mins
+        On line 3900/5266. Time left for epoch: 0.76 mins
+        On line 4000/5266. Time left for epoch: 0.705 mins
+        On line 4100/5266. Time left for epoch: 0.65 mins
+        On line 4200/5266. Time left for epoch: 0.595 mins
+        On line 4300/5266. Time left for epoch: 0.54 mins
+        On line 4400/5266. Time left for epoch: 0.484 mins
+        On line 4500/5266. Time left for epoch: 0.428 mins
+        On line 4600/5266. Time left for epoch: 0.372 mins
+        On line 4700/5266. Time left for epoch: 0.316 mins
+        On line 4800/5266. Time left for epoch: 0.26 mins
+        On line 4900/5266. Time left for epoch: 0.204 mins
+        On line 5000/5266. Time left for epoch: 0.148 mins
+        On line 5100/5266. Time left for epoch: 0.092 mins
+        On line 5200/5266. Time left for epoch: 0.037 mins
+        train_loss=230984.17821836472 train_ppl=161.44647618886424
+i 'll see you , i 'll be a little
+i 've got a jedi
+i 've got a thousand ships , i 'll be a thousand ships , i 'll be a thousand ships
+i 'll see you , i 'll be a jedi
+i 'll see you , i 'll be a jedi
+i 'm going to be a jedi
+i 've got a jedi
+i 'll see you , i 'll be a little
+i 'll see you
+i 'll see you , i 'll be a little
+        dev_ppl=125.77309250563016
+Input words: ['我', '在', '這', '裡', '就', '在', '那', '个', '<EOS>'] --> Output words: ['i', "'ll", 'see', 'you', ',', 'i', "'ll", 'be', 'a', 'little']
+    Epoch 2/2:
+        On line 100/5266. Time left for epoch: 2.903 mins
+        On line 200/5266. Time left for epoch: 2.926 mins
+        On line 300/5266. Time left for epoch: 2.964 mins
+        On line 400/5266. Time left for epoch: 2.892 mins
+        On line 500/5266. Time left for epoch: 2.788 mins
+        On line 600/5266. Time left for epoch: 2.723 mins
+        On line 700/5266. Time left for epoch: 2.673 mins
+        On line 800/5266. Time left for epoch: 2.6 mins
+        On line 900/5266. Time left for epoch: 2.534 mins
+        On line 1000/5266. Time left for epoch: 2.484 mins
+        On line 1100/5266. Time left for epoch: 2.42 mins
+        On line 1200/5266. Time left for epoch: 2.345 mins
+        On line 1300/5266. Time left for epoch: 2.283 mins
+        On line 1400/5266. Time left for epoch: 2.219 mins
+        On line 1500/5266. Time left for epoch: 2.152 mins
+        On line 1600/5266. Time left for epoch: 2.094 mins
+        On line 1700/5266. Time left for epoch: 2.028 mins
+        On line 1800/5266. Time left for epoch: 1.966 mins
+        On line 1900/5266. Time left for epoch: 1.914 mins
+        On line 2000/5266. Time left for epoch: 1.851 mins
+        On line 2100/5266. Time left for epoch: 1.796 mins
+        On line 2200/5266. Time left for epoch: 1.74 mins
+        On line 2300/5266. Time left for epoch: 1.684 mins
+        On line 2400/5266. Time left for epoch: 1.628 mins
+        On line 2500/5266. Time left for epoch: 1.571 mins
+        On line 2600/5266. Time left for epoch: 1.522 mins
+        On line 2700/5266. Time left for epoch: 1.464 mins
+        On line 2800/5266. Time left for epoch: 1.411 mins
+        On line 2900/5266. Time left for epoch: 1.347 mins
+        On line 3000/5266. Time left for epoch: 1.287 mins
+        On line 3100/5266. Time left for epoch: 1.229 mins
+        On line 3200/5266. Time left for epoch: 1.168 mins
+        On line 3300/5266. Time left for epoch: 1.112 mins
+        On line 3400/5266. Time left for epoch: 1.057 mins
+        On line 3500/5266. Time left for epoch: 1.001 mins
+        On line 3600/5266. Time left for epoch: 0.944 mins
+        On line 3700/5266. Time left for epoch: 0.886 mins
+        On line 3800/5266. Time left for epoch: 0.828 mins
+        On line 3900/5266. Time left for epoch: 0.771 mins
+        On line 4000/5266. Time left for epoch: 0.716 mins
+        On line 4100/5266. Time left for epoch: 0.66 mins
+        On line 4200/5266. Time left for epoch: 0.603 mins
+        On line 4300/5266. Time left for epoch: 0.546 mins
+        On line 4400/5266. Time left for epoch: 0.49 mins
+        On line 4500/5266. Time left for epoch: 0.433 mins
+        On line 4600/5266. Time left for epoch: 0.376 mins
+        On line 4700/5266. Time left for epoch: 0.32 mins
+        On line 4800/5266. Time left for epoch: 0.263 mins
+        On line 4900/5266. Time left for epoch: 0.207 mins
+        On line 5000/5266. Time left for epoch: 0.15 mins
+        On line 5100/5266. Time left for epoch: 0.093 mins
+        On line 5200/5266. Time left for epoch: 0.037 mins
+        train_loss=199048.9654569626 train_ppl=79.93792054293026
+i do n't know where he 's a few minutes
+i do n't know where he 's gonna be with you
+i do n't know , i do n't know , i 'm sorry
+i do n't know where he 's a few minutes
+i do n't know where he 's gonna be with you
+i do n't know where he 's a few minutes
+i 'm sorry
+i do n't know where he 's gonna be a few minutes
+i do n't know where he 's a few minutes
+i do n't know where he 's a few minutes
+        dev_ppl=118.74988153722768
+Input words: ['我', '在', '這', '裡', '就', '在', '那', '个', '<EOS>'] --> Output words: ['i', 'do', "n't", 'know', 'where', 'he', "'s", 'a', 'few', 'minutes']
+Time left to complete: 2563.005603790283
+Iteration 2/4, Target to Foreign:
+    Epoch 1/2:
+        On line 100/5266. Time left for epoch: 2.551 mins
+        On line 200/5266. Time left for epoch: 2.503 mins
+        On line 300/5266. Time left for epoch: 2.503 mins
+        On line 400/5266. Time left for epoch: 2.49 mins
+        On line 500/5266. Time left for epoch: 2.426 mins
+        On line 600/5266. Time left for epoch: 2.332 mins
+        On line 700/5266. Time left for epoch: 2.296 mins
+        On line 800/5266. Time left for epoch: 2.264 mins
+        On line 900/5266. Time left for epoch: 2.263 mins
+        On line 1000/5266. Time left for epoch: 2.22 mins
+        On line 1100/5266. Time left for epoch: 2.204 mins
+        On line 1200/5266. Time left for epoch: 2.145 mins
+        On line 1300/5266. Time left for epoch: 2.091 mins
+        On line 1400/5266. Time left for epoch: 2.054 mins
+        On line 1500/5266. Time left for epoch: 1.996 mins
+        On line 1600/5266. Time left for epoch: 1.954 mins
+        On line 1700/5266. Time left for epoch: 1.908 mins
+        On line 1800/5266. Time left for epoch: 1.851 mins
+        On line 1900/5266. Time left for epoch: 1.793 mins
+        On line 2000/5266. Time left for epoch: 1.744 mins
+        On line 2100/5266. Time left for epoch: 1.688 mins
+        On line 2200/5266. Time left for epoch: 1.634 mins
+        On line 2300/5266. Time left for epoch: 1.589 mins
+        On line 2400/5266. Time left for epoch: 1.545 mins
+        On line 2500/5266. Time left for epoch: 1.49 mins
+        On line 2600/5266. Time left for epoch: 1.435 mins
+        On line 2700/5266. Time left for epoch: 1.383 mins
+        On line 2800/5266. Time left for epoch: 1.33 mins
+        On line 2900/5266. Time left for epoch: 1.276 mins
+        On line 3000/5266. Time left for epoch: 1.221 mins
+        On line 3100/5266. Time left for epoch: 1.174 mins
+        On line 3200/5266. Time left for epoch: 1.118 mins
+        On line 3300/5266. Time left for epoch: 1.063 mins
+        On line 3400/5266. Time left for epoch: 1.008 mins
+        On line 3500/5266. Time left for epoch: 0.953 mins
+        On line 3600/5266. Time left for epoch: 0.898 mins
+        On line 3700/5266. Time left for epoch: 0.844 mins
+        On line 3800/5266. Time left for epoch: 0.791 mins
+        On line 3900/5266. Time left for epoch: 0.739 mins
+        On line 4000/5266. Time left for epoch: 0.684 mins
+        On line 4100/5266. Time left for epoch: 0.628 mins
+        On line 4200/5266. Time left for epoch: 0.575 mins
+        On line 4300/5266. Time left for epoch: 0.521 mins
+        On line 4400/5266. Time left for epoch: 0.467 mins
+        On line 4500/5266. Time left for epoch: 0.414 mins
+        On line 4600/5266. Time left for epoch: 0.36 mins
+        On line 4700/5266. Time left for epoch: 0.306 mins
+        On line 4800/5266. Time left for epoch: 0.252 mins
+        On line 4900/5266. Time left for epoch: 0.198 mins
+        On line 5000/5266. Time left for epoch: 0.144 mins
+        On line 5100/5266. Time left for epoch: 0.09 mins
+        On line 5200/5266. Time left for epoch: 0.036 mins
+        train_loss=229702.8021965027 train_ppl=94.6932680514458
+我 不 知 道 他 们 的
+我 不 知 道 他
+我 不 知 道 他 们 的
+我 不 知 道 我 不 知 道
+我 是 啊
+我 是 啊
+我 不 知 道 他 们 的
+我 不 知 道 他 们 的
+我 不 知 道 我 不 知 道
+我 不 知 道 我 不 知 道
+        dev_ppl=89.32851408110851
+Input words: ['i', "'m", 'sorry', '<EOS>'] --> Output words: ['我', '不', '知', '道', '我', '不', '知', '道']
+    Epoch 2/2:
+        On line 100/5266. Time left for epoch: 2.801 mins
+        On line 200/5266. Time left for epoch: 2.738 mins
+        On line 300/5266. Time left for epoch: 2.682 mins
+        On line 400/5266. Time left for epoch: 2.649 mins
+        On line 500/5266. Time left for epoch: 2.593 mins
+        On line 600/5266. Time left for epoch: 2.522 mins
+        On line 700/5266. Time left for epoch: 2.496 mins
+        On line 800/5266. Time left for epoch: 2.445 mins
+        On line 900/5266. Time left for epoch: 2.379 mins
+        On line 1000/5266. Time left for epoch: 2.315 mins
+        On line 1100/5266. Time left for epoch: 2.267 mins
+        On line 1200/5266. Time left for epoch: 2.213 mins
+        On line 1300/5266. Time left for epoch: 2.163 mins
+        On line 1400/5266. Time left for epoch: 2.109 mins
+        On line 1500/5266. Time left for epoch: 2.047 mins
+        On line 1600/5266. Time left for epoch: 1.99 mins
+        On line 1700/5266. Time left for epoch: 1.934 mins
+        On line 1800/5266. Time left for epoch: 1.874 mins
+        On line 1900/5266. Time left for epoch: 1.819 mins
+        On line 2000/5266. Time left for epoch: 1.768 mins
+        On line 2100/5266. Time left for epoch: 1.723 mins
+        On line 2200/5266. Time left for epoch: 1.67 mins
+        On line 2300/5266. Time left for epoch: 1.62 mins
+        On line 2400/5266. Time left for epoch: 1.571 mins
+        On line 2500/5266. Time left for epoch: 1.516 mins
+        On line 2600/5266. Time left for epoch: 1.464 mins
+        On line 2700/5266. Time left for epoch: 1.409 mins
+        On line 2800/5266. Time left for epoch: 1.351 mins
+        On line 2900/5266. Time left for epoch: 1.3 mins
+        On line 3000/5266. Time left for epoch: 1.243 mins
+        On line 3100/5266. Time left for epoch: 1.187 mins
+        On line 3200/5266. Time left for epoch: 1.13 mins
+        On line 3300/5266. Time left for epoch: 1.076 mins
+        On line 3400/5266. Time left for epoch: 1.02 mins
+        On line 3500/5266. Time left for epoch: 0.963 mins
+        On line 3600/5266. Time left for epoch: 0.908 mins
+        On line 3700/5266. Time left for epoch: 0.854 mins
+        On line 3800/5266. Time left for epoch: 0.798 mins
+        On line 3900/5266. Time left for epoch: 0.746 mins
+        On line 4000/5266. Time left for epoch: 0.691 mins
+        On line 4100/5266. Time left for epoch: 0.637 mins
+        On line 4200/5266. Time left for epoch: 0.582 mins
+        On line 4300/5266. Time left for epoch: 0.528 mins
+        On line 4400/5266. Time left for epoch: 0.473 mins
+        On line 4500/5266. Time left for epoch: 0.418 mins
+        On line 4600/5266. Time left for epoch: 0.363 mins
+        On line 4700/5266. Time left for epoch: 0.308 mins
+        On line 4800/5266. Time left for epoch: 0.254 mins
+        On line 4900/5266. Time left for epoch: 0.199 mins
+        On line 5000/5266. Time left for epoch: 0.145 mins
+        On line 5100/5266. Time left for epoch: 0.09 mins
+        On line 5200/5266. Time left for epoch: 0.036 mins
+        train_loss=229702.8021965027 train_ppl=94.6932680514458
+我 不 知 道 他 们 的
+我 不 知 道 他
+我 不 知 道 他 们 的
+我 不 知 道 我 不 知 道
+我 是 啊
+我 是 啊
+我 不 知 道 他 们 的
+我 不 知 道 他 们 的
+我 不 知 道 我 不 知 道
+我 不 知 道 我 不 知 道
+        dev_ppl=89.32851408110851
+Input words: ['i', "'m", 'sorry', '<EOS>'] --> Output words: ['我', '不', '知', '道', '我', '不', '知', '道']
+Iteration 2/4, Foreign to Target:
+    Epoch 1/2:
+        On line 100/5266. Time left for epoch: 2.763 mins
+        On line 200/5266. Time left for epoch: 2.675 mins
+        On line 300/5266. Time left for epoch: 2.701 mins
+        On line 400/5266. Time left for epoch: 2.684 mins
+        On line 500/5266. Time left for epoch: 2.696 mins
+        On line 600/5266. Time left for epoch: 2.65 mins
+        On line 700/5266. Time left for epoch: 2.572 mins
+        On line 800/5266. Time left for epoch: 2.526 mins
+        On line 900/5266. Time left for epoch: 2.459 mins
+        On line 1000/5266. Time left for epoch: 2.387 mins
+        On line 1100/5266. Time left for epoch: 2.325 mins
+        On line 1200/5266. Time left for epoch: 2.256 mins
+        On line 1300/5266. Time left for epoch: 2.232 mins
+        On line 1400/5266. Time left for epoch: 2.166 mins
+        On line 1500/5266. Time left for epoch: 2.119 mins
+        On line 1600/5266. Time left for epoch: 2.067 mins
+        On line 1700/5266. Time left for epoch: 2.01 mins
+        On line 1800/5266. Time left for epoch: 1.954 mins
+        On line 1900/5266. Time left for epoch: 1.893 mins
+        On line 2000/5266. Time left for epoch: 1.837 mins
+        On line 2100/5266. Time left for epoch: 1.787 mins
+        On line 2200/5266. Time left for epoch: 1.73 mins
+        On line 2300/5266. Time left for epoch: 1.681 mins
+        On line 2400/5266. Time left for epoch: 1.622 mins
+        On line 2500/5266. Time left for epoch: 1.558 mins
+        On line 2600/5266. Time left for epoch: 1.501 mins
+        On line 2700/5266. Time left for epoch: 1.44 mins
+        On line 2800/5266. Time left for epoch: 1.384 mins
+        On line 2900/5266. Time left for epoch: 1.327 mins
+        On line 3000/5266. Time left for epoch: 1.271 mins
+        On line 3100/5266. Time left for epoch: 1.212 mins
+        On line 3200/5266. Time left for epoch: 1.156 mins
+        On line 3300/5266. Time left for epoch: 1.098 mins
+        On line 3400/5266. Time left for epoch: 1.044 mins
+        On line 3500/5266. Time left for epoch: 0.985 mins
+        On line 3600/5266. Time left for epoch: 0.929 mins
+        On line 3700/5266. Time left for epoch: 0.876 mins
+        On line 3800/5266. Time left for epoch: 0.82 mins
+        On line 3900/5266. Time left for epoch: 0.764 mins
+        On line 4000/5266. Time left for epoch: 0.708 mins
+        On line 4100/5266. Time left for epoch: 0.651 mins
+        On line 4200/5266. Time left for epoch: 0.597 mins
+        On line 4300/5266. Time left for epoch: 0.541 mins
+        On line 4400/5266. Time left for epoch: 0.484 mins
+        On line 4500/5266. Time left for epoch: 0.427 mins
+        On line 4600/5266. Time left for epoch: 0.372 mins
+        On line 4700/5266. Time left for epoch: 0.316 mins
+        On line 4800/5266. Time left for epoch: 0.261 mins
+        On line 4900/5266. Time left for epoch: 0.205 mins
+        On line 5000/5266. Time left for epoch: 0.149 mins
+        On line 5100/5266. Time left for epoch: 0.093 mins
+        On line 5200/5266. Time left for epoch: 0.037 mins
+        train_loss=180501.55195951462 train_ppl=53.12539095358187
+i do n't know where he 's a few minutes
+i do n't know where he 's a few minutes
+i do n't know , i 'm sorry
+i do n't know where he 's a few minutes
+i do n't know where he 's a few minutes
+i do n't know where he 's a few minutes
+i do n't know where he 's a few minutes
+i do n't know , i 'm sorry
+i do n't know where he 's a few minutes
+i do n't know where he 's a few minutes
+        dev_ppl=55.77477321244106
+Input words: ['我', '不', '知', '道', '他', '们', '的', '<EOS>'] --> Output words: ['i', 'do', "n't", 'know', 'where', 'he', "'s", 'a', 'few', 'minutes']
+    Epoch 2/2:
+        On line 100/5266. Time left for epoch: 3.061 mins
+        On line 200/5266. Time left for epoch: 2.987 mins
+        On line 300/5266. Time left for epoch: 2.819 mins
+        On line 400/5266. Time left for epoch: 2.785 mins
+        On line 500/5266. Time left for epoch: 2.743 mins
+        On line 600/5266. Time left for epoch: 2.714 mins
+        On line 700/5266. Time left for epoch: 2.671 mins
+        On line 800/5266. Time left for epoch: 2.602 mins
+        On line 900/5266. Time left for epoch: 2.525 mins
+        On line 1000/5266. Time left for epoch: 2.453 mins
+        On line 1100/5266. Time left for epoch: 2.386 mins
+        On line 1200/5266. Time left for epoch: 2.333 mins
+        On line 1300/5266. Time left for epoch: 2.266 mins
+        On line 1400/5266. Time left for epoch: 2.2 mins
+        On line 1500/5266. Time left for epoch: 2.142 mins
+        On line 1600/5266. Time left for epoch: 2.082 mins
+        On line 1700/5266. Time left for epoch: 2.025 mins
+        On line 1800/5266. Time left for epoch: 1.972 mins
+        On line 1900/5266. Time left for epoch: 1.912 mins
+        On line 2000/5266. Time left for epoch: 1.857 mins
+        On line 2100/5266. Time left for epoch: 1.801 mins
+        On line 2200/5266. Time left for epoch: 1.742 mins
+        On line 2300/5266. Time left for epoch: 1.681 mins
+        On line 2400/5266. Time left for epoch: 1.621 mins
+        On line 2500/5266. Time left for epoch: 1.56 mins
+        On line 2600/5266. Time left for epoch: 1.505 mins
+        On line 2700/5266. Time left for epoch: 1.446 mins
+        On line 2800/5266. Time left for epoch: 1.392 mins
+        On line 2900/5266. Time left for epoch: 1.332 mins
+        On line 3000/5266. Time left for epoch: 1.274 mins
+        On line 3100/5266. Time left for epoch: 1.217 mins
+        On line 3200/5266. Time left for epoch: 1.163 mins
+        On line 3300/5266. Time left for epoch: 1.107 mins
+        On line 3400/5266. Time left for epoch: 1.05 mins
+        On line 3500/5266. Time left for epoch: 0.994 mins
+        On line 3600/5266. Time left for epoch: 0.937 mins
+        On line 3700/5266. Time left for epoch: 0.882 mins
+        On line 3800/5266. Time left for epoch: 0.827 mins
+        On line 3900/5266. Time left for epoch: 0.771 mins
+        On line 4000/5266. Time left for epoch: 0.714 mins
+        On line 4100/5266. Time left for epoch: 0.658 mins
+        On line 4200/5266. Time left for epoch: 0.601 mins
+        On line 4300/5266. Time left for epoch: 0.544 mins
+        On line 4400/5266. Time left for epoch: 0.487 mins
+        On line 4500/5266. Time left for epoch: 0.43 mins
+        On line 4600/5266. Time left for epoch: 0.374 mins
+        On line 4700/5266. Time left for epoch: 0.317 mins
+        On line 4800/5266. Time left for epoch: 0.262 mins
+        On line 4900/5266. Time left for epoch: 0.206 mins
+        On line 5000/5266. Time left for epoch: 0.149 mins
+        On line 5100/5266. Time left for epoch: 0.093 mins
+        On line 5200/5266. Time left for epoch: 0.037 mins
+        train_loss=180501.55195951462 train_ppl=53.12539095358187
+i do n't know where he 's a few minutes
+i do n't know where he 's a few minutes
+i do n't know , i 'm sorry
+i do n't know where he 's a few minutes
+i do n't know where he 's a few minutes
+i do n't know where he 's a few minutes
+i do n't know where he 's a few minutes
+i do n't know , i 'm sorry
+i do n't know where he 's a few minutes
+i do n't know where he 's a few minutes
+        dev_ppl=55.77477321244106
+Input words: ['我', '不', '知', '道', '他', '们', '的', '<EOS>'] --> Output words: ['i', 'do', "n't", 'know', 'where', 'he', "'s", 'a', 'few', 'minutes']
+Time left to complete: 3476.3522996902466
+Iteration 3/4, Target to Foreign:
+    Epoch 1/2:
+        On line 100/5266. Time left for epoch: 2.747 mins
+        On line 200/5266. Time left for epoch: 2.667 mins
+        On line 300/5266. Time left for epoch: 2.542 mins
+        On line 400/5266. Time left for epoch: 2.501 mins
+        On line 500/5266. Time left for epoch: 2.432 mins
+        On line 600/5266. Time left for epoch: 2.387 mins
+        On line 700/5266. Time left for epoch: 2.32 mins
+        On line 800/5266. Time left for epoch: 2.287 mins
+        On line 900/5266. Time left for epoch: 2.236 mins
+        On line 1000/5266. Time left for epoch: 2.167 mins
+        On line 1100/5266. Time left for epoch: 2.122 mins
+        On line 1200/5266. Time left for epoch: 2.074 mins
+        On line 1300/5266. Time left for epoch: 2.027 mins
+        On line 1400/5266. Time left for epoch: 1.98 mins
+        On line 1500/5266. Time left for epoch: 1.929 mins
+        On line 1600/5266. Time left for epoch: 1.881 mins
+        On line 1700/5266. Time left for epoch: 1.83 mins
+        On line 1800/5266. Time left for epoch: 1.78 mins
+        On line 1900/5266. Time left for epoch: 1.731 mins
+        On line 2000/5266. Time left for epoch: 1.677 mins
+        On line 2100/5266. Time left for epoch: 1.63 mins
+        On line 2200/5266. Time left for epoch: 1.582 mins
+        On line 2300/5266. Time left for epoch: 1.528 mins
+        On line 2400/5266. Time left for epoch: 1.472 mins
+        On line 2500/5266. Time left for epoch: 1.423 mins
+        On line 2600/5266. Time left for epoch: 1.372 mins
+        On line 2700/5266. Time left for epoch: 1.321 mins
+        On line 2800/5266. Time left for epoch: 1.268 mins
+        On line 2900/5266. Time left for epoch: 1.217 mins
+        On line 3000/5266. Time left for epoch: 1.169 mins
+        On line 3100/5266. Time left for epoch: 1.119 mins
+        On line 3200/5266. Time left for epoch: 1.069 mins
+        On line 3300/5266. Time left for epoch: 1.018 mins
+        On line 3400/5266. Time left for epoch: 0.965 mins
+        On line 3500/5266. Time left for epoch: 0.913 mins
+        On line 3600/5266. Time left for epoch: 0.86 mins
+        On line 3700/5266. Time left for epoch: 0.808 mins
+        On line 3800/5266. Time left for epoch: 0.757 mins
+        On line 3900/5266. Time left for epoch: 0.708 mins
+        On line 4000/5266. Time left for epoch: 0.655 mins
+        On line 4100/5266. Time left for epoch: 0.604 mins
+        On line 4200/5266. Time left for epoch: 0.553 mins
+        On line 4300/5266. Time left for epoch: 0.501 mins
+        On line 4400/5266. Time left for epoch: 0.448 mins
+        On line 4500/5266. Time left for epoch: 0.397 mins
+        On line 4600/5266. Time left for epoch: 0.345 mins
+        On line 4700/5266. Time left for epoch: 0.293 mins
+        On line 4800/5266. Time left for epoch: 0.241 mins
+        On line 4900/5266. Time left for epoch: 0.189 mins
+        On line 5000/5266. Time left for epoch: 0.138 mins
+        On line 5100/5266. Time left for epoch: 0.086 mins
+        On line 5200/5266. Time left for epoch: 0.034 mins
+        train_loss=221454.02357053757 train_ppl=79.63975190482593
+我 不 知 道 他 们 的
+我 不 知 道 他 们 的
+我 不 知 道 我 不 知 道
+我 不 知 道 他 们 的
+我 不 知 道 他 们 的
+我 不 知 道 他 们 的
+我 不 知 道 我 不 知 道
+我 不 知 道 他 们 的
+我 不 知 道 我 不 知 道
+我 不 知 道 他 们 的
+        dev_ppl=84.77023615396604
+Input words: ['i', 'do', "n't", 'know', 'where', 'he', "'s", 'a', 'few', 'minutes', '<EOS>'] --> Output words: ['我', '不', '知', '道', '他', '们', '的']
+    Epoch 2/2:
+        On line 100/5266. Time left for epoch: 2.658 mins
+        On line 200/5266. Time left for epoch: 2.649 mins
+        On line 300/5266. Time left for epoch: 2.561 mins
+        On line 400/5266. Time left for epoch: 2.511 mins
+        On line 500/5266. Time left for epoch: 2.476 mins
+        On line 600/5266. Time left for epoch: 2.407 mins
+        On line 700/5266. Time left for epoch: 2.353 mins
+        On line 800/5266. Time left for epoch: 2.284 mins
+        On line 900/5266. Time left for epoch: 2.232 mins
+        On line 1000/5266. Time left for epoch: 2.198 mins
+        On line 1100/5266. Time left for epoch: 2.168 mins
+        On line 1200/5266. Time left for epoch: 2.108 mins
+        On line 1300/5266. Time left for epoch: 2.056 mins
+        On line 1400/5266. Time left for epoch: 2.008 mins
+        On line 1500/5266. Time left for epoch: 1.955 mins
+        On line 1600/5266. Time left for epoch: 1.902 mins
+        On line 1700/5266. Time left for epoch: 1.867 mins
+        On line 1800/5266. Time left for epoch: 1.809 mins
+        On line 1900/5266. Time left for epoch: 1.754 mins
+        On line 2000/5266. Time left for epoch: 1.699 mins
+        On line 2100/5266. Time left for epoch: 1.648 mins
+        On line 2200/5266. Time left for epoch: 1.596 mins
+        On line 2300/5266. Time left for epoch: 1.544 mins
+        On line 2400/5266. Time left for epoch: 1.487 mins
+        On line 2500/5266. Time left for epoch: 1.438 mins
+        On line 2600/5266. Time left for epoch: 1.39 mins
+        On line 2700/5266. Time left for epoch: 1.338 mins
+        On line 2800/5266. Time left for epoch: 1.284 mins
+        On line 2900/5266. Time left for epoch: 1.235 mins
+        On line 3000/5266. Time left for epoch: 1.182 mins
+        On line 3100/5266. Time left for epoch: 1.132 mins
+        On line 3200/5266. Time left for epoch: 1.08 mins
+        On line 3300/5266. Time left for epoch: 1.029 mins
+        On line 3400/5266. Time left for epoch: 0.978 mins
+        On line 3500/5266. Time left for epoch: 0.923 mins
+        On line 3600/5266. Time left for epoch: 0.873 mins
+        On line 3700/5266. Time left for epoch: 0.82 mins
+        On line 3800/5266. Time left for epoch: 0.77 mins
+        On line 3900/5266. Time left for epoch: 0.717 mins
+        On line 4000/5266. Time left for epoch: 0.665 mins
+        On line 4100/5266. Time left for epoch: 0.613 mins
+        On line 4200/5266. Time left for epoch: 0.561 mins
+        On line 4300/5266. Time left for epoch: 0.507 mins
+        On line 4400/5266. Time left for epoch: 0.455 mins
+        On line 4500/5266. Time left for epoch: 0.402 mins
+        On line 4600/5266. Time left for epoch: 0.349 mins
+        On line 4700/5266. Time left for epoch: 0.297 mins
+        On line 4800/5266. Time left for epoch: 0.244 mins
+        On line 4900/5266. Time left for epoch: 0.192 mins
+        On line 5000/5266. Time left for epoch: 0.14 mins
+        On line 5100/5266. Time left for epoch: 0.087 mins
+        On line 5200/5266. Time left for epoch: 0.035 mins
+        train_loss=221454.02357053757 train_ppl=79.63975190482593
+我 不 知 道 他 们 的
+我 不 知 道 他 们 的
+我 不 知 道 我 不 知 道
+我 不 知 道 他 们 的
+我 不 知 道 他 们 的
+我 不 知 道 他 们 的
+我 不 知 道 我 不 知 道
+我 不 知 道 他 们 的
+我 不 知 道 我 不 知 道
+我 不 知 道 他 们 的
+        dev_ppl=84.77023615396604
+Input words: ['i', 'do', "n't", 'know', 'where', 'he', "'s", 'a', 'few', 'minutes', '<EOS>'] --> Output words: ['我', '不', '知', '道', '他', '们', '的']
+Iteration 3/4, Foreign to Target:
+    Epoch 1/2:
+        On line 100/5266. Time left for epoch: 2.838 mins
+        On line 200/5266. Time left for epoch: 2.914 mins
+        On line 300/5266. Time left for epoch: 2.901 mins
+        On line 400/5266. Time left for epoch: 2.859 mins
+        On line 500/5266. Time left for epoch: 2.792 mins
+        On line 600/5266. Time left for epoch: 2.7 mins
+        On line 700/5266. Time left for epoch: 2.636 mins
+        On line 800/5266. Time left for epoch: 2.58 mins
+        On line 900/5266. Time left for epoch: 2.545 mins
+        On line 1000/5266. Time left for epoch: 2.465 mins
+        On line 1100/5266. Time left for epoch: 2.412 mins
+        On line 1200/5266. Time left for epoch: 2.355 mins
+        On line 1300/5266. Time left for epoch: 2.304 mins
+        On line 1400/5266. Time left for epoch: 2.245 mins
+        On line 1500/5266. Time left for epoch: 2.192 mins
+        On line 1600/5266. Time left for epoch: 2.134 mins
+        On line 1700/5266. Time left for epoch: 2.068 mins
+        On line 1800/5266. Time left for epoch: 2.006 mins
+        On line 1900/5266. Time left for epoch: 1.946 mins
+        On line 2000/5266. Time left for epoch: 1.89 mins
+        On line 2100/5266. Time left for epoch: 1.834 mins
+        On line 2200/5266. Time left for epoch: 1.776 mins
+        On line 2300/5266. Time left for epoch: 1.722 mins
+        On line 2400/5266. Time left for epoch: 1.668 mins
+        On line 2500/5266. Time left for epoch: 1.609 mins
+        On line 2600/5266. Time left for epoch: 1.55 mins
+        On line 2700/5266. Time left for epoch: 1.495 mins
+        On line 2800/5266. Time left for epoch: 1.436 mins
+        On line 2900/5266. Time left for epoch: 1.38 mins
+        On line 3000/5266. Time left for epoch: 1.318 mins
+        On line 3100/5266. Time left for epoch: 1.26 mins
+        On line 3200/5266. Time left for epoch: 1.202 mins
+        On line 3300/5266. Time left for epoch: 1.146 mins
+        On line 3400/5266. Time left for epoch: 1.086 mins
+        On line 3500/5266. Time left for epoch: 1.028 mins
+        On line 3600/5266. Time left for epoch: 0.97 mins
+        On line 3700/5266. Time left for epoch: 0.911 mins
+        On line 3800/5266. Time left for epoch: 0.852 mins
+        On line 3900/5266. Time left for epoch: 0.793 mins
+        On line 4000/5266. Time left for epoch: 0.735 mins
+        On line 4100/5266. Time left for epoch: 0.678 mins
+        On line 4200/5266. Time left for epoch: 0.62 mins
+        On line 4300/5266. Time left for epoch: 0.562 mins
+        On line 4400/5266. Time left for epoch: 0.504 mins
+        On line 4500/5266. Time left for epoch: 0.446 mins
+        On line 4600/5266. Time left for epoch: 0.388 mins
+        On line 4700/5266. Time left for epoch: 0.33 mins
+        On line 4800/5266. Time left for epoch: 0.272 mins
+        On line 4900/5266. Time left for epoch: 0.214 mins
+        On line 5000/5266. Time left for epoch: 0.155 mins
+        On line 5100/5266. Time left for epoch: 0.097 mins
+        On line 5200/5266. Time left for epoch: 0.039 mins
+        train_loss=180277.64103603363 train_ppl=52.53798804161902
+i do n't know , i 'm sorry
+i do n't know , i 'm sorry
+i do n't know where he 's a few minutes
+i do n't know where he 's a few minutes
+i do n't know , i 'm sorry
+i do n't know where he 's a few minutes
+i do n't know , i 'm sorry
+i do n't know where he 's a few minutes
+i do n't know where he 's a few minutes
+i do n't know where he 's a few minutes
+        dev_ppl=50.72511854478106
+Input words: ['我', '不', '知', '道', '我', '不', '知', '道', '<EOS>'] --> Output words: ['i', 'do', "n't", 'know', 'where', 'he', "'s", 'a', 'few', 'minutes']
+    Epoch 2/2:
+        On line 100/5266. Time left for epoch: 3.081 mins
+        On line 200/5266. Time left for epoch: 2.952 mins
+        On line 300/5266. Time left for epoch: 2.972 mins
+        On line 400/5266. Time left for epoch: 2.909 mins
+        On line 500/5266. Time left for epoch: 2.827 mins
+        On line 600/5266. Time left for epoch: 2.734 mins
+        On line 700/5266. Time left for epoch: 2.697 mins
+        On line 800/5266. Time left for epoch: 2.66 mins
+        On line 900/5266. Time left for epoch: 2.597 mins
+        On line 1000/5266. Time left for epoch: 2.528 mins
+        On line 1100/5266. Time left for epoch: 2.467 mins
+        On line 1200/5266. Time left for epoch: 2.395 mins
+        On line 1300/5266. Time left for epoch: 2.327 mins
+        On line 1400/5266. Time left for epoch: 2.269 mins
+        On line 1500/5266. Time left for epoch: 2.207 mins
+        On line 1600/5266. Time left for epoch: 2.138 mins
+        On line 1700/5266. Time left for epoch: 2.084 mins
+        On line 1800/5266. Time left for epoch: 2.026 mins
+        On line 1900/5266. Time left for epoch: 1.97 mins
+        On line 2000/5266. Time left for epoch: 1.914 mins
+        On line 2100/5266. Time left for epoch: 1.855 mins
+        On line 2200/5266. Time left for epoch: 1.796 mins
+        On line 2300/5266. Time left for epoch: 1.738 mins
+        On line 2400/5266. Time left for epoch: 1.673 mins
+        On line 2500/5266. Time left for epoch: 1.608 mins
+        On line 2600/5266. Time left for epoch: 1.551 mins
+        On line 2700/5266. Time left for epoch: 1.49 mins
+        On line 2800/5266. Time left for epoch: 1.426 mins
+        On line 2900/5266. Time left for epoch: 1.369 mins
+        On line 3000/5266. Time left for epoch: 1.313 mins
+        On line 3100/5266. Time left for epoch: 1.255 mins
+        On line 3200/5266. Time left for epoch: 1.196 mins
+        On line 3300/5266. Time left for epoch: 1.138 mins
+        On line 3400/5266. Time left for epoch: 1.08 mins
+        On line 3500/5266. Time left for epoch: 1.025 mins
+        On line 3600/5266. Time left for epoch: 0.967 mins
+        On line 3700/5266. Time left for epoch: 0.909 mins
+        On line 3800/5266. Time left for epoch: 0.849 mins
+        On line 3900/5266. Time left for epoch: 0.791 mins
+        On line 4000/5266. Time left for epoch: 0.733 mins
+        On line 4100/5266. Time left for epoch: 0.674 mins
+        On line 4200/5266. Time left for epoch: 0.615 mins
+        On line 4300/5266. Time left for epoch: 0.557 mins
+        On line 4400/5266. Time left for epoch: 0.5 mins
+        On line 4500/5266. Time left for epoch: 0.444 mins
+        On line 4600/5266. Time left for epoch: 0.385 mins
+        On line 4700/5266. Time left for epoch: 0.328 mins
+        On line 4800/5266. Time left for epoch: 0.27 mins
+        On line 4900/5266. Time left for epoch: 0.212 mins
+        On line 5000/5266. Time left for epoch: 0.154 mins
+        On line 5100/5266. Time left for epoch: 0.096 mins
+        On line 5200/5266. Time left for epoch: 0.038 mins
+        train_loss=180277.64103603363 train_ppl=52.53798804161902
+i do n't know , i 'm sorry
+i do n't know , i 'm sorry
+i do n't know where he 's a few minutes
+i do n't know where he 's a few minutes
+i do n't know , i 'm sorry
+i do n't know where he 's a few minutes
+i do n't know , i 'm sorry
+i do n't know where he 's a few minutes
+i do n't know where he 's a few minutes
+i do n't know where he 's a few minutes
+        dev_ppl=50.72511854478106
+Input words: ['我', '不', '知', '道', '我', '不', '知', '道', '<EOS>'] --> Output words: ['i', 'do', "n't", 'know', 'where', 'he', "'s", 'a', 'few', 'minutes']
+Time left to complete: 2635.6563007831573
+Iteration 4/4, Target to Foreign:
+    Epoch 1/2:
+        On line 100/5266. Time left for epoch: 2.754 mins
+        On line 200/5266. Time left for epoch: 2.656 mins
+        On line 300/5266. Time left for epoch: 2.657 mins
+        On line 400/5266. Time left for epoch: 2.597 mins
+        On line 500/5266. Time left for epoch: 2.549 mins
+        On line 600/5266. Time left for epoch: 2.542 mins
+        On line 700/5266. Time left for epoch: 2.467 mins
+        On line 800/5266. Time left for epoch: 2.42 mins
+        On line 900/5266. Time left for epoch: 2.366 mins
+        On line 1000/5266. Time left for epoch: 2.314 mins
+        On line 1100/5266. Time left for epoch: 2.259 mins
+        On line 1200/5266. Time left for epoch: 2.199 mins
+        On line 1300/5266. Time left for epoch: 2.154 mins
+        On line 1400/5266. Time left for epoch: 2.093 mins
+        On line 1500/5266. Time left for epoch: 2.033 mins
+        On line 1600/5266. Time left for epoch: 1.986 mins
+        On line 1700/5266. Time left for epoch: 1.93 mins
+        On line 1800/5266. Time left for epoch: 1.877 mins
+        On line 1900/5266. Time left for epoch: 1.82 mins
+        On line 2000/5266. Time left for epoch: 1.76 mins
+        On line 2100/5266. Time left for epoch: 1.707 mins
+        On line 2200/5266. Time left for epoch: 1.655 mins
+        On line 2300/5266. Time left for epoch: 1.603 mins
+        On line 2400/5266. Time left for epoch: 1.546 mins
+        On line 2500/5266. Time left for epoch: 1.49 mins
+        On line 2600/5266. Time left for epoch: 1.435 mins
+        On line 2700/5266. Time left for epoch: 1.383 mins
+        On line 2800/5266. Time left for epoch: 1.327 mins
+        On line 2900/5266. Time left for epoch: 1.275 mins
+        On line 3000/5266. Time left for epoch: 1.218 mins
+        On line 3100/5266. Time left for epoch: 1.167 mins
+        On line 3200/5266. Time left for epoch: 1.114 mins
+        On line 3300/5266. Time left for epoch: 1.061 mins
+        On line 3400/5266. Time left for epoch: 1.005 mins
+        On line 3500/5266. Time left for epoch: 0.95 mins
+        On line 3600/5266. Time left for epoch: 0.896 mins
+        On line 3700/5266. Time left for epoch: 0.843 mins
+        On line 3800/5266. Time left for epoch: 0.788 mins
+        On line 3900/5266. Time left for epoch: 0.734 mins
+        On line 4000/5266. Time left for epoch: 0.681 mins
+        On line 4100/5266. Time left for epoch: 0.627 mins
+        On line 4200/5266. Time left for epoch: 0.574 mins
+        On line 4300/5266. Time left for epoch: 0.52 mins
+        On line 4400/5266. Time left for epoch: 0.466 mins
+        On line 4500/5266. Time left for epoch: 0.412 mins
+        On line 4600/5266. Time left for epoch: 0.358 mins
+        On line 4700/5266. Time left for epoch: 0.304 mins
+        On line 4800/5266. Time left for epoch: 0.25 mins
+        On line 4900/5266. Time left for epoch: 0.197 mins
+        On line 5000/5266. Time left for epoch: 0.143 mins
+        On line 5100/5266. Time left for epoch: 0.089 mins
+        On line 5200/5266. Time left for epoch: 0.035 mins
+        train_loss=221611.11217784882 train_ppl=80.09535543369108
+我 不 知 道 他 们 的
+我 不 知 道 他 们 的
+我 不 知 道 他 们 的
+我 不 知 道 他 们 的
+我 不 知 道 他 们 的
+我 不 知 道 他 们 的
+我 不 知 道 我 不 知 道
+我 不 知 道 他 们 的
+我 不 知 道 他 们 的
+我 不 知 道 他 们 的
+        dev_ppl=73.25416760531701
+Input words: ['i', 'do', "n't", 'know', 'where', 'he', "'s", 'a', 'few', 'minutes', '<EOS>'] --> Output words: ['我', '不', '知', '道', '他', '们', '的']
+    Epoch 2/2:
+        On line 100/5266. Time left for epoch: 2.98 mins
+        On line 200/5266. Time left for epoch: 2.876 mins
+        On line 300/5266. Time left for epoch: 2.755 mins
+        On line 400/5266. Time left for epoch: 2.698 mins
+        On line 500/5266. Time left for epoch: 2.661 mins
+        On line 600/5266. Time left for epoch: 2.599 mins
+        On line 700/5266. Time left for epoch: 2.532 mins
+        On line 800/5266. Time left for epoch: 2.456 mins
+        On line 900/5266. Time left for epoch: 2.39 mins
+        On line 1000/5266. Time left for epoch: 2.345 mins
+        On line 1100/5266. Time left for epoch: 2.287 mins
+        On line 1200/5266. Time left for epoch: 2.243 mins
+        On line 1300/5266. Time left for epoch: 2.176 mins
+        On line 1400/5266. Time left for epoch: 2.121 mins
+        On line 1500/5266. Time left for epoch: 2.071 mins
+        On line 1600/5266. Time left for epoch: 2.012 mins
+        On line 1700/5266. Time left for epoch: 1.951 mins
+        On line 1800/5266. Time left for epoch: 1.894 mins
+        On line 1900/5266. Time left for epoch: 1.834 mins
+        On line 2000/5266. Time left for epoch: 1.779 mins
+        On line 2100/5266. Time left for epoch: 1.726 mins
+        On line 2200/5266. Time left for epoch: 1.664 mins
+        On line 2300/5266. Time left for epoch: 1.612 mins
+        On line 2400/5266. Time left for epoch: 1.559 mins
+        On line 2500/5266. Time left for epoch: 1.501 mins
+        On line 2600/5266. Time left for epoch: 1.446 mins
+        On line 2700/5266. Time left for epoch: 1.39 mins
+        On line 2800/5266. Time left for epoch: 1.338 mins
+        On line 2900/5266. Time left for epoch: 1.283 mins
+        On line 3000/5266. Time left for epoch: 1.23 mins
+        On line 3100/5266. Time left for epoch: 1.174 mins
+        On line 3200/5266. Time left for epoch: 1.118 mins
+        On line 3300/5266. Time left for epoch: 1.064 mins
+        On line 3400/5266. Time left for epoch: 1.008 mins
+        On line 3500/5266. Time left for epoch: 0.955 mins
+        On line 3600/5266. Time left for epoch: 0.9 mins
+        On line 3700/5266. Time left for epoch: 0.845 mins
+        On line 3800/5266. Time left for epoch: 0.792 mins
+        On line 3900/5266. Time left for epoch: 0.737 mins
+        On line 4000/5266. Time left for epoch: 0.684 mins
+        On line 4100/5266. Time left for epoch: 0.629 mins
+        On line 4200/5266. Time left for epoch: 0.576 mins
+        On line 4300/5266. Time left for epoch: 0.522 mins
+        On line 4400/5266. Time left for epoch: 0.468 mins
+        On line 4500/5266. Time left for epoch: 0.414 mins
+        On line 4600/5266. Time left for epoch: 0.36 mins
+        On line 4700/5266. Time left for epoch: 0.306 mins
+        On line 4800/5266. Time left for epoch: 0.252 mins
+        On line 4900/5266. Time left for epoch: 0.198 mins
+        On line 5000/5266. Time left for epoch: 0.144 mins
+        On line 5100/5266. Time left for epoch: 0.09 mins
+        On line 5200/5266. Time left for epoch: 0.036 mins
+        train_loss=221611.11217784882 train_ppl=80.09535543369108
+我 不 知 道 他 们 的
+我 不 知 道 他 们 的
+我 不 知 道 他 们 的
+我 不 知 道 他 们 的
+我 不 知 道 他 们 的
+我 不 知 道 他 们 的
+我 不 知 道 我 不 知 道
+我 不 知 道 他 们 的
+我 不 知 道 他 们 的
+我 不 知 道 他 们 的
+        dev_ppl=73.25416760531701
+Input words: ['i', 'do', "n't", 'know', 'where', 'he', "'s", 'a', 'few', 'minutes', '<EOS>'] --> Output words: ['我', '不', '知', '道', '他', '们', '的']
+Iteration 4/4, Foreign to Target:
+    Epoch 1/2:
+        On line 100/5266. Time left for epoch: 3.008 mins
+        On line 200/5266. Time left for epoch: 3.138 mins
+        On line 300/5266. Time left for epoch: 3.08 mins
+        On line 400/5266. Time left for epoch: 3.002 mins
+        On line 500/5266. Time left for epoch: 2.949 mins
+        On line 600/5266. Time left for epoch: 2.869 mins
+        On line 700/5266. Time left for epoch: 2.801 mins
+        On line 800/5266. Time left for epoch: 2.699 mins
+        On line 900/5266. Time left for epoch: 2.628 mins
+        On line 1000/5266. Time left for epoch: 2.536 mins
+        On line 1100/5266. Time left for epoch: 2.462 mins
+        On line 1200/5266. Time left for epoch: 2.399 mins
+        On line 1300/5266. Time left for epoch: 2.327 mins
+        On line 1400/5266. Time left for epoch: 2.254 mins
+        On line 1500/5266. Time left for epoch: 2.204 mins
+        On line 1600/5266. Time left for epoch: 2.152 mins
+        On line 1700/5266. Time left for epoch: 2.088 mins
+        On line 1800/5266. Time left for epoch: 2.036 mins
+        On line 1900/5266. Time left for epoch: 1.974 mins
+        On line 2000/5266. Time left for epoch: 1.918 mins
+        On line 2100/5266. Time left for epoch: 1.86 mins
+        On line 2200/5266. Time left for epoch: 1.806 mins
+        On line 2300/5266. Time left for epoch: 1.744 mins
+        On line 2400/5266. Time left for epoch: 1.683 mins
+        On line 2500/5266. Time left for epoch: 1.623 mins
+        On line 2600/5266. Time left for epoch: 1.564 mins
+        On line 2700/5266. Time left for epoch: 1.503 mins
+        On line 2800/5266. Time left for epoch: 1.451 mins
+        On line 2900/5266. Time left for epoch: 1.388 mins
+        On line 3000/5266. Time left for epoch: 1.327 mins
+        On line 3100/5266. Time left for epoch: 1.266 mins
+        On line 3200/5266. Time left for epoch: 1.207 mins
+        On line 3300/5266. Time left for epoch: 1.146 mins
+        On line 3400/5266. Time left for epoch: 1.087 mins
+        On line 3500/5266. Time left for epoch: 1.033 mins
+        On line 3600/5266. Time left for epoch: 0.974 mins
+        On line 3700/5266. Time left for epoch: 0.915 mins
+        On line 3800/5266. Time left for epoch: 0.855 mins
+        On line 3900/5266. Time left for epoch: 0.797 mins
+        On line 4000/5266. Time left for epoch: 0.738 mins
+        On line 4100/5266. Time left for epoch: 0.68 mins
+        On line 4200/5266. Time left for epoch: 0.622 mins
+        On line 4300/5266. Time left for epoch: 0.563 mins
+        On line 4400/5266. Time left for epoch: 0.504 mins
+        On line 4500/5266. Time left for epoch: 0.446 mins
+        On line 4600/5266. Time left for epoch: 0.388 mins
+        On line 4700/5266. Time left for epoch: 0.329 mins
+        On line 4800/5266. Time left for epoch: 0.27 mins
+        On line 4900/5266. Time left for epoch: 0.212 mins
+        On line 5000/5266. Time left for epoch: 0.155 mins
+        On line 5100/5266. Time left for epoch: 0.097 mins
+        On line 5200/5266. Time left for epoch: 0.038 mins
+        train_loss=179695.8161869049 train_ppl=52.690340826961695
+i do n't know where he 's a few minutes
+i do n't know where he 's a few minutes
+i do n't know where he 's a few minutes
+i do n't know , i 'm sorry
+i do n't know , i 'm sorry
+i do n't know , i 'm sorry
+i do n't know , i 'm sorry
+i do n't know , i 'm sorry
+i do n't know , i 'm sorry
+i do n't know where he 's a few minutes
+        dev_ppl=53.4096834064767
+Input words: ['我', '不', '知', '道', '他', '们', '的', '<EOS>'] --> Output words: ['i', 'do', "n't", 'know', 'where', 'he', "'s", 'a', 'few', 'minutes']
+    Epoch 2/2:
+        On line 100/5266. Time left for epoch: 3.113 mins
+        On line 200/5266. Time left for epoch: 2.989 mins
+        On line 300/5266. Time left for epoch: 2.929 mins
+        On line 400/5266. Time left for epoch: 2.941 mins
+        On line 500/5266. Time left for epoch: 2.865 mins
+        On line 600/5266. Time left for epoch: 2.772 mins
+        On line 700/5266. Time left for epoch: 2.684 mins
+        On line 800/5266. Time left for epoch: 2.628 mins
+        On line 900/5266. Time left for epoch: 2.56 mins
+        On line 1000/5266. Time left for epoch: 2.489 mins
+        On line 1100/5266. Time left for epoch: 2.43 mins
+        On line 1200/5266. Time left for epoch: 2.376 mins
+        On line 1300/5266. Time left for epoch: 2.301 mins
+        On line 1400/5266. Time left for epoch: 2.235 mins
+        On line 1500/5266. Time left for epoch: 2.187 mins
+        On line 1600/5266. Time left for epoch: 2.123 mins
+        On line 1700/5266. Time left for epoch: 2.058 mins
+        On line 1800/5266. Time left for epoch: 1.999 mins
+        On line 1900/5266. Time left for epoch: 1.933 mins
+        On line 2000/5266. Time left for epoch: 1.876 mins
+        On line 2100/5266. Time left for epoch: 1.822 mins
+        On line 2200/5266. Time left for epoch: 1.763 mins
+        On line 2300/5266. Time left for epoch: 1.703 mins
+        On line 2400/5266. Time left for epoch: 1.646 mins
+        On line 2500/5266. Time left for epoch: 1.585 mins
+        On line 2600/5266. Time left for epoch: 1.527 mins
+        On line 2700/5266. Time left for epoch: 1.471 mins
+        On line 2800/5266. Time left for epoch: 1.414 mins
+        On line 2900/5266. Time left for epoch: 1.356 mins
+        On line 3000/5266. Time left for epoch: 1.301 mins
+        On line 3100/5266. Time left for epoch: 1.242 mins
+        On line 3200/5266. Time left for epoch: 1.187 mins
+        On line 3300/5266. Time left for epoch: 1.131 mins
+        On line 3400/5266. Time left for epoch: 1.073 mins
+        On line 3500/5266. Time left for epoch: 1.016 mins
+        On line 3600/5266. Time left for epoch: 0.959 mins
+        On line 3700/5266. Time left for epoch: 0.902 mins
+        On line 3800/5266. Time left for epoch: 0.843 mins
+        On line 3900/5266. Time left for epoch: 0.785 mins
+        On line 4000/5266. Time left for epoch: 0.728 mins
+        On line 4100/5266. Time left for epoch: 0.67 mins
+        On line 4200/5266. Time left for epoch: 0.613 mins
+        On line 4300/5266. Time left for epoch: 0.556 mins
+        On line 4400/5266. Time left for epoch: 0.498 mins
+        On line 4500/5266. Time left for epoch: 0.44 mins
+        On line 4600/5266. Time left for epoch: 0.382 mins
+        On line 4700/5266. Time left for epoch: 0.325 mins
+        On line 4800/5266. Time left for epoch: 0.267 mins
+        On line 4900/5266. Time left for epoch: 0.21 mins
+        On line 5000/5266. Time left for epoch: 0.153 mins
+        On line 5100/5266. Time left for epoch: 0.095 mins
+        On line 5200/5266. Time left for epoch: 0.038 mins
+        train_loss=179695.8161869049 train_ppl=52.690340826961695
+i do n't know where he 's a few minutes
+i do n't know where he 's a few minutes
+i do n't know where he 's a few minutes
+i do n't know , i 'm sorry
+i do n't know , i 'm sorry
+i do n't know , i 'm sorry
+i do n't know , i 'm sorry
+i do n't know , i 'm sorry
+i do n't know , i 'm sorry
+i do n't know where he 's a few minutes
+        dev_ppl=53.4096834064767
+Input words: ['我', '不', '知', '道', '他', '们', '的', '<EOS>'] --> Output words: ['i', 'do', "n't", 'know', 'where', 'he', "'s", 'a', 'few', 'minutes']
+Time left to complete: 0.0
