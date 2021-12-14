@@ -5,6 +5,14 @@ import torch.nn as nn
 import pickle
 from sklearn.utils import shuffle
 from sklearn.model_selection import train_test_split
+import time
+
+# declare variables for timing
+totalLinesLeft = 0
+timePerLine = 0
+timeLeft = timePerLine*totalLinesLeft
+totalstarttime = time.time()
+epochstartTime = time.time()
 
 def create_mapping(vocab, words):
     r = []
@@ -151,6 +159,7 @@ if __name__=="__main__":
     opt = torch.optim.Adam(m.parameters(), lr=.0002)
 
     for epoch in range(10):
+        epochstartTime = time.time()
         ### Update model on train
         train_loss = 0
 
@@ -168,9 +177,12 @@ if __name__=="__main__":
             loss.backward()
             opt.step()
 
-            if li % 1000 == 0:
+            if li % 100 == 0:
                 # print(f'Tree Score: {tree_score}')
                 # print(f'z: {z}')
+                avgTime = (time.time() - epochstartTime)/i
+                timeLeftEpoch = avgTime * (totalLen-i)
+                print(f'        On line {i}/{totalLen}. Time left for epoch: {round(timeLeftEpoch/60, 3)} mins')
                 print(f'Train loss on round {li} of {totalLen}: {loss}')
 
             train_loss += loss
