@@ -75,12 +75,15 @@ def create_all_data(infile):
     Should be used for train data
     '''
 
+    print("Creating all data")
     # create vocab and labels
     labels = {}
     vocab = {}
+
+    print("Loading pickle file")
     with open(infile, 'rb') as stuff:
         data = pickle.load(stuff)
-    
+    print("Done loading pickle file")
     for line in data:
         words = line[0]
         label = line[1]
@@ -177,7 +180,7 @@ if __name__=="__main__":
             loss.backward()
             opt.step()
 
-            if li % 100 == 0:
+            if li % 100 == 0 and li != 0:
                 # print(f'Tree Score: {tree_score}')
                 # print(f'z: {z}')
                 avgTime = (time.time() - epochstartTime)/li
