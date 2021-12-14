@@ -187,7 +187,7 @@ if __name__=="__main__":
         # compute accuracy
         score = computeScore(devPredL, devLabels)
         print(f'Dev accuracy: {score}')
-        write_to_file(f'outputs/devAccuracy{round(score,3)}', devData, devPredL)
+        write_to_file(f'outputs/devRnnAccuracy{round(score,3)}', devData, devPredL)
 
         # test data
         testPredL = []
@@ -199,8 +199,8 @@ if __name__=="__main__":
         # compute f1
         score = computeScore(testPredL, testLabels)
         print(f'Test accuracy: {score}')
-        write_to_file(f'outputs/testAccuracy{round(score,3)}', testData, testPredL)
+        write_to_file(f'outputs/testRnnAccuracy{round(score,3)}', testData, testPredL)
 
         # save model
-        filename = f'models/ModelPart3-{round(score,3)}.torch'
+        filename = f'models/ModelRnnClassifier-{round(score,3)}.torch'
         torch.save(m, filename)
