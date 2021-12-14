@@ -170,7 +170,6 @@ if __name__=="__main__":
         print(f'Entering epoch {epoch}')
         
         for li, line in enumerate(x):
-            epochstartTime = time.time()
             # actual = torch.zeros(numLabels)
             # actual[labels.index(y[li])] = 1
 
