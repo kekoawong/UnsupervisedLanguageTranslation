@@ -180,9 +180,9 @@ if __name__=="__main__":
             if li % 100 == 0:
                 # print(f'Tree Score: {tree_score}')
                 # print(f'z: {z}')
-                avgTime = (time.time() - epochstartTime)/i
-                timeLeftEpoch = avgTime * (totalLen-i)
-                print(f'        On line {i}/{totalLen}. Time left for epoch: {round(timeLeftEpoch/60, 3)} mins')
+                avgTime = (time.time() - epochstartTime)/li
+                timeLeftEpoch = avgTime * (totalLen-li)
+                print(f'        On line {li}/{totalLen}. Time left for epoch: {round(timeLeftEpoch/60, 3)} mins')
                 print(f'Train loss on round {li} of {totalLen}: {loss}')
 
             train_loss += loss
