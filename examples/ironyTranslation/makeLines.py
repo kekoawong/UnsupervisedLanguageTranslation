@@ -40,7 +40,7 @@ if __name__ == "__main__":
             if row[1] != 'irony' and row[1] != 'regular':
                 continue
             else:
-                row[1] = 1 if row[1] != 'irony' else -1
+                row[1] = 1 if row[1] == 'irony' else -1
             
             # clean string
             line = cleaner(row[0])
@@ -63,7 +63,7 @@ if __name__ == "__main__":
             if row[1] != 'irony' and row[1] != 'regular':
                 continue
             else:
-                row[1] = 1 if row[1] != 'irony' else -1
+                row[1] = 1 if row[1] == 'irony' else -1
             
             # clean string
             line = cleaner(row[0])

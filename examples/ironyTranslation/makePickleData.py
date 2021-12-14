@@ -71,7 +71,7 @@ if __name__ == "__main__":
             if row[1] != 'irony' and row[1] != 'regular':
                 continue
             else:
-                row[1] = 1 if row[1] != 'irony' else -1
+                row[1] = 1 if row[1] == 'irony' else -1
             
             sentences.append( (line, row[1]) )
             # tokenize and remove stopwords
@@ -90,7 +90,7 @@ if __name__ == "__main__":
             if row[1] != 'irony' and row[1] != 'regular':
                 continue
             else:
-                row[1] = 1 if row[1] != 'irony' else -1
+                row[1] = 1 if row[1] == 'irony' else -1
             
             sentences.append( (line, row[1]) )
             # tokenize and remove stopwords
