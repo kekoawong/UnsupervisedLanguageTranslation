@@ -36,6 +36,8 @@ xTrain, xTest, yTrain, yTest = train_test_split(tfidf, labels, test_size=0.2)
 
 #Calling the Class
 naive_bayes = GaussianNB()
+print()
+print(xTrain.toarray()[0])
  
 #Fitting the data to the classifier
 naive_bayes.fit(xTrain.toarray() , yTrain)

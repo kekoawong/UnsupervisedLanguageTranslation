@@ -5,6 +5,13 @@ import torch.nn as nn
 import pickle
 from sklearn.utils import shuffle
 from sklearn.model_selection import train_test_split
+import time
+# declare variables for timing
+totalLinesLeft = 0
+timePerLine = 0
+timeLeft = timePerLine*totalLinesLeft
+totalstarttime = time.time()
+epochstartTime = time.time()
 
 def create_mapping(vocab, words):
     r = []
@@ -115,7 +122,6 @@ class Model(nn.Module):
         # initialize layers
         self.embedding = layers.Embedding(self.vocabLength, rnnDim)
         self.rnn1 = layers.RNN(rnnDim)
-        self.rnn2 = layers.RNN(rnnDim)
         self.softmax = layers.SoftmaxLayer(rnnDim, outputDim)
        
 
@@ -126,8 +132,6 @@ class Model(nn.Module):
         pred = self.embedding(pred)
         #print(f'after embedding: {pred.shape}')
         pred = self.rnn1.sequence(pred)
-        #print(f'after rnn1: {pred.shape}')
-        pred = self.rnn2.sequence(pred)
         #print(f'after rnn2: {pred.shape}')
         pred = self.softmax.forward(pred)
         #print(f'after sofrmax: {pred.shape}')
@@ -162,6 +166,7 @@ if __name__=="__main__":
         print(f'Entering epoch {epoch}')
         
         for li, line in enumerate(x):
+            epochstartTime = time.time()
             # actual = torch.zeros(numLabels)
             # actual[labels.index(y[li])] = 1
 
@@ -171,9 +176,12 @@ if __name__=="__main__":
             loss.backward()
             opt.step()
 
-            if li % 1000 == 0:
+            if li % 100 == 0 and li != 0:
                 # print(f'Tree Score: {tree_score}')
                 # print(f'z: {z}')
+                avgTime = (time.time() - epochstartTime)/li
+                timeLeftEpoch = avgTime * (totalLen-li)
+                print(f'        On line {li}/{totalLen}. Time left for epoch: {round(timeLeftEpoch/60, 3)} mins')
                 print(f'Train loss on round {li} of {totalLen}: {loss}')
 
             train_loss += loss
