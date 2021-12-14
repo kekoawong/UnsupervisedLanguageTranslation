@@ -2,7 +2,9 @@
 import layers
 import torch
 import torch.nn as nn
+import pickle
 from sklearn.utils import shuffle
+from sklearn.model_selection import train_test_split
 
 def create_mapping(vocab, words):
     r = []
@@ -57,9 +59,9 @@ def create_data(infile, vocab):
 
     return sentWords, sentLabels
 
-def create_train(infile):
+def create_all_data(infile):
     '''
-    Takes the input file and vocab as arguments
+    Takes the input file arguments
     Outputs a data object of the list of lists of words and labels:
         (list of lists of words, list of lists of labels, list of vocab, list of labels)
     Should be used for train data
@@ -68,10 +70,11 @@ def create_train(infile):
     # create vocab and labels
     labels = {}
     vocab = {}
-    with open(infile, 'r') as input:
-        for line in input:
-            words = line.split()
-            label = words.pop()
+    with open(infile, 'rb') as input:
+        data = pickle.load(input)
+        for line in data:
+            words = line[0]
+            label = line[1]
 
             # update vocab and label count
             if label not in labels:
@@ -136,10 +139,10 @@ class Model(nn.Module):
 if __name__=="__main__":
     # file names
     trainFile = 'data.part1/train'
-    devFile = 'data.part1/dev'
-    testFile = 'data.part1/test'
 
-    trainData, trainLabels, vocab, labels = create_train(trainFile)
+    allData, allLabels, vocab, labels = create_all_data(trainFile)
+    trainData, trainLabels, testData, testLabels = train_test_split(allData, allLabels, test_size=0.1)
+    testData, testLabels, devData, devLabels = train_test_split(testData, testLabels, test_size=0.5)
 
     # Define Model
     numLabels = len(labels)
@@ -175,7 +178,6 @@ if __name__=="__main__":
         print(f'Train loss: {train_loss}')
 
         # label dev data
-        devData, devLabels = create_data(devFile, vocab)
         devPredL = []
         for li, line in enumerate(devData):
             devPred = m(line)
@@ -188,7 +190,6 @@ if __name__=="__main__":
         write_to_file(f'outputs/devAccuracy{round(score,3)}', devData, devPredL)
 
         # test data
-        testData, testLabels = create_data(testFile, vocab)
         testPredL = []
         for li, line in enumerate(testData):
             testPred = m(line)
