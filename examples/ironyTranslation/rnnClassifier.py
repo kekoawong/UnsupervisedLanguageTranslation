@@ -43,10 +43,11 @@ def create_data(infile, vocab):
     # create output list of lists
     sentWords = []
     sentLabels = []
-    input = open(infile, 'r')
-    for line in input:
-        words = line.split()
-        label = words.pop()
+    input = open(infile, 'rb')
+    data = pickle.load(input)
+    for line in data:
+        words = line[0]
+        label = line[1]
 
         # check for words to convert to <UNK>
         for i, word in enumerate(words):
@@ -70,21 +71,22 @@ def create_all_data(infile):
     # create vocab and labels
     labels = {}
     vocab = {}
-    with open(infile, 'rb') as input:
-        data = pickle.load(input)
-        for line in data:
-            words = line[0]
-            label = line[1]
+    with open(infile, 'rb') as stuff:
+        data = pickle.load(stuff)
+    
+    for line in data:
+        words = line[0]
+        label = line[1]
 
-            # update vocab and label count
-            if label not in labels:
-                labels[label] = 0
-            labels[label] += 1
-            # update vocab
-            for word in words:
-                if word not in vocab:
-                    vocab[word] = 0
-                vocab[word] += 1
+        # update vocab and label count
+        if label not in labels:
+            labels[label] = 0
+        labels[label] += 1
+        # update vocab
+        for word in words:
+            if word not in vocab:
+                vocab[word] = 0
+            vocab[word] += 1
 
     # replace single words with <UNK>, updating vocab
     vocab['<UNK>'] = 0
@@ -138,10 +140,11 @@ class Model(nn.Module):
 
 if __name__=="__main__":
     # file names
-    trainFile = 'data.part1/train'
+    trainFile = 'data/allData.pickle'
 
     allData, allLabels, vocab, labels = create_all_data(trainFile)
-    trainData, trainLabels, testData, testLabels = train_test_split(allData, allLabels, test_size=0.1)
+    trainData, testData, trainLabels, testLabels = train_test_split(allData, allLabels, test_size=0.1)
+    print(f'train data: {len(trainData)} trainlabels: {len(trainLabels)}')
     testData, testLabels, devData, devLabels = train_test_split(testData, testLabels, test_size=0.5)
 
     # Define Model

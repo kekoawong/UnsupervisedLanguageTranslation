@@ -7,11 +7,13 @@ if __name__ == "__main__":
     inputFile1 = 'data/redditIrony.csv'
     inputFile2 = 'data/twitterTrain.csv'
     inputFile3 = 'data/twitterTest.csv'
+    allWordsFile = 'data/allWords.txt'
     ironicSenFile = 'data/ironicSentences.txt'
     unironicSenFile = 'data/unironicSentences.txt'
 
     iFile = open(ironicSenFile, 'w')
     uFile = open(unironicSenFile, 'w')
+    allFile = open(allWordsFile, 'w')
 
     with open(inputFile1, newline='') as csvfile:
             spamreader = csv.reader(csvfile)
@@ -22,6 +24,7 @@ if __name__ == "__main__":
                 line = cleaner(row[0])
                 tokens = word_tokenize(line)
                 sen = ' '.join(tokens)
+                allFile.write(sen + ',' + str(row[1]) + '\n')
                 sen += '\n'
                 # lowercase, but this may help predict the stylig
                 # get rid of all punctuation not periods
@@ -46,6 +49,7 @@ if __name__ == "__main__":
             line = cleaner(row[0])
             tokens = word_tokenize(line)
             sen = ' '.join(tokens)
+            allFile.write(sen + ',' + str(row[1]) + '\n')
             sen += '\n'
 
             if int(row[1]) < 0:
@@ -69,6 +73,7 @@ if __name__ == "__main__":
             line = cleaner(row[0])
             tokens = word_tokenize(line)
             sen = ' '.join(tokens)
+            allFile.write(sen + ',' + str(row[1]) + '\n')
             sen += '\n'
 
             if int(row[1]) < 0:
