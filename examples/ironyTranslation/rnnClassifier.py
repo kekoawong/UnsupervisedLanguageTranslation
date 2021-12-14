@@ -158,6 +158,7 @@ if __name__=="__main__":
     opt = torch.optim.Adam(m.parameters(), lr=.0002)
 
     for epoch in range(10):
+        epochstartTime = time.time()
         ### Update model on train
         train_loss = 0
 
@@ -176,12 +177,12 @@ if __name__=="__main__":
             loss.backward()
             opt.step()
 
-            if li % 100 == 0 and li != 0:
+            if li % 100 == 0:
                 # print(f'Tree Score: {tree_score}')
                 # print(f'z: {z}')
-                avgTime = (time.time() - epochstartTime)/li
-                timeLeftEpoch = avgTime * (totalLen-li)
-                print(f'        On line {li}/{totalLen}. Time left for epoch: {round(timeLeftEpoch/60, 3)} mins')
+                avgTime = (time.time() - epochstartTime)/i
+                timeLeftEpoch = avgTime * (totalLen-i)
+                print(f'        On line {i}/{totalLen}. Time left for epoch: {round(timeLeftEpoch/60, 3)} mins')
                 print(f'Train loss on round {li} of {totalLen}: {loss}')
 
             train_loss += loss
