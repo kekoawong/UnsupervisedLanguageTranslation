@@ -129,17 +129,22 @@ class Model(nn.Module):
        
 
     def forward(self, X):
-        senL = len(X)
-        pred = create_mapping(self.vocab, X)
-        #print(f'after mapping: {pred.shape}')
-        pred = self.embedding(pred)
-        #print(f'after embedding: {pred.shape}')
-        pred = self.rnn1.sequence(pred)
-        #print(f'after rnn2: {pred.shape}')
-        pred = self.softmax.forward(pred)
-        #print(f'after sofrmax: {pred.shape}')
+        try: 
+            senL = len(X)
+            pred = create_mapping(self.vocab, X)
+            #print(f'after mapping: {pred.shape}')
+            pred = self.embedding(pred)
+            #print(f'after embedding: {pred.shape}')
+            pred = self.rnn1.sequence(pred)
+            #print(f'after rnn2: {pred.shape}')
+            pred = self.softmax.forward(pred)
+            #print(f'after sofrmax: {pred.shape}')
+            pred = (pred[senL-1])
+        except TypeError:
+            print(f'Bad words: {line}')
+            pred = [1, 0]
 
-        return(pred[senL-1])
+        return pred
 
     def loss_fn(self, predTensor, label):
         return predTensor[self.labels.index(label)]
