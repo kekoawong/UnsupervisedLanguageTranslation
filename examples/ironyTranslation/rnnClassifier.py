@@ -23,8 +23,6 @@ def create_mapping(vocab, words):
     return torch.tensor(r)
 
 def write_to_file(filename, sentences, labels):
-    print(f'Sentences: {sentences}')
-    print(f'Labels: {labels}')
     with open(filename, 'w') as writeFile:
         for i, sen in enumerate(sentences):
             outputString=" "
