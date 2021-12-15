@@ -23,6 +23,8 @@ def create_mapping(vocab, words):
     return torch.tensor(r)
 
 def write_to_file(filename, sentences, labels):
+    print(f'Sentences: {sentences}')
+    print(f'Labels: {labels}')
     with open(filename, 'w') as writeFile:
         for i, sen in enumerate(sentences):
             outputString=" "
@@ -205,6 +207,7 @@ if __name__=="__main__":
         for li, line in enumerate(devData):
             # skip empty lines
             if len(line) == 0:
+                devPredL.append(labels[0])
                 continue
             devPred = m(line)
             la = torch.argmax(devPred)
@@ -220,6 +223,7 @@ if __name__=="__main__":
         for li, line in enumerate(testData):
             # skip empty lines
             if len(line) == 0:
+                testPredL.append(labels[0])
                 continue
             testPred = m(line)
             la = torch.argmax(testPred)
