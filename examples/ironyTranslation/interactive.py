@@ -21,6 +21,7 @@ while cont:
     pred = classifyModel(words)
     i = torch.argmax(pred)
     p = classifyModel.labels[i]
+    print(p)
     is_ironic = True if p == 1 else False
 
     if is_ironic:
