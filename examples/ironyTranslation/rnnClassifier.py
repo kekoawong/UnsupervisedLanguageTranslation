@@ -121,6 +121,7 @@ class Model(nn.Module):
         self.vocab = vocab
         self.vocabLength = len(vocab)
         self.labels = labels
+        self.outputDim = outputDim
 
         # initialize layers
         self.embedding = layers.Embedding(self.vocabLength, rnnDim)
@@ -139,12 +140,11 @@ class Model(nn.Module):
             #print(f'after rnn2: {pred.shape}')
             pred = self.softmax.forward(pred)
             #print(f'after sofrmax: {pred.shape}')
-            pred = (pred[senL-1])
         except TypeError:
             print(f'Bad words: {line}')
-            pred = [1, 0]
+            pred = torch.zeros(self.outputDim)
 
-        return pred
+        return pred[senL-1]
 
     def loss_fn(self, predTensor, label):
         return predTensor[self.labels.index(label)]
@@ -175,6 +175,10 @@ if __name__=="__main__":
         print(f'Entering epoch {epoch}')
         
         for li, line in enumerate(x):
+
+            # skip empty lines
+            if len(line) == 0:
+                continue
             # actual = torch.zeros(numLabels)
             # actual[labels.index(y[li])] = 1
 
@@ -199,6 +203,9 @@ if __name__=="__main__":
         # label dev data
         devPredL = []
         for li, line in enumerate(devData):
+            # skip empty lines
+            if len(line) == 0:
+                continue
             devPred = m(line)
             la = torch.argmax(devPred)
             devPredL.append(labels[la])
@@ -211,6 +218,9 @@ if __name__=="__main__":
         # test data
         testPredL = []
         for li, line in enumerate(testData):
+            # skip empty lines
+            if len(line) == 0:
+                continue
             testPred = m(line)
             la = torch.argmax(testPred)
             testPredL.append(labels[la])
