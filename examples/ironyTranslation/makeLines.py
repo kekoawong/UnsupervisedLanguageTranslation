@@ -43,16 +43,16 @@ if __name__ == "__main__":
             if row[1] != 'irony' and row[1] != 'regular':
                 continue
             else:
-                row[1] = 1 if row[1] == 'irony' else -1
+                label = 1 if row[1] == 'irony' else -1
             
             # clean string
             line = cleaner(row[0])
             tokens = word_tokenize(line)
             sen = ' '.join(tokens)
-            allFile.write(sen + ',' + str(row[1]) + '\n')
+            allFile.write(sen + ',' + str(label) + '\n')
             sen += '\n'
 
-            if int(row[1]) < 0:
+            if int(label) < 0:
                 uFile.write(sen)
             else:
                 iFile.write(sen)
@@ -67,16 +67,16 @@ if __name__ == "__main__":
             if row[1] != 'irony' and row[1] != 'regular':
                 continue
             else:
-                row[1] = 1 if row[1] == 'irony' else -1
+                label = 1 if row[1] == 'irony' else -1
             
             # clean string
             line = cleaner(row[0])
             tokens = word_tokenize(line)
             sen = ' '.join(tokens)
-            allFile.write(sen + ',' + str(row[1]) + '\n')
+            allFile.write(sen + ',' + str(label) + '\n')
             sen += '\n'
 
-            if int(row[1]) < 0:
+            if int(label) < 0:
                 uFile.write(sen)
             else:
                 iFile.write(sen)

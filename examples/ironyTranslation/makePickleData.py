@@ -19,6 +19,12 @@ def cleaner(line):
     line = ''.join(c for c in line if c not in emoji.UNICODE_EMOJI) #Remove Emojis
     line = line.replace("#", "").replace("_", " ") #Remove hashtag sign but keep the text
 
+    # remove words that automatically illicit irony
+    badWords = ["irony", "sarcasm"]
+    words = line.split()
+    finalWords = [word for word in words if word.lower() not in badWords]
+    line = ' '.join(finalWords)
+
     # tokenize and retokenize into better format
     tokens = nltk.word_tokenize(str(line))
     line = TreebankWordDetokenizer().detokenize(tokens)
@@ -71,14 +77,14 @@ if __name__ == "__main__":
             if row[1] != 'irony' and row[1] != 'regular':
                 continue
             else:
-                row[1] = 1 if row[1] == 'irony' else -1
+                label = 1 if row[1] == 'irony' else -1
             
-            sentences.append( (line, row[1]) )
+            sentences.append( (line, label) )
             # tokenize and remove stopwords
             tokens = word_tokenize(line)
             words = [w for w in tokens if not w in sw]
             # append to data
-            data.append( (words, row[1]) )
+            data.append( (words, label) )
     with open(inputFile3, newline='') as csvfile:
         spamreader = csv.reader(csvfile)
         # skip header
@@ -90,14 +96,14 @@ if __name__ == "__main__":
             if row[1] != 'irony' and row[1] != 'regular':
                 continue
             else:
-                row[1] = 1 if row[1] == 'irony' else -1
+                label = 1 if row[1] == 'irony' else -1
             
-            sentences.append( (line, row[1]) )
+            sentences.append( (line, label) )
             # tokenize and remove stopwords
             tokens = word_tokenize(line)
             words = [w for w in tokens if not w in sw]
             # append to data
-            data.append( (words, row[1]) )
+            data.append( (words, label) )
 
     
     with open(outputFile, 'wb') as outFile:

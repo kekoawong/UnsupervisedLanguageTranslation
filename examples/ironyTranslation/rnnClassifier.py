@@ -157,7 +157,7 @@ if __name__=="__main__":
     allData, allLabels, vocab, labels = create_all_data(trainFile)
     trainData, testData, trainLabels, testLabels = train_test_split(allData, allLabels, test_size=0.1)
     print(f'train data: {len(trainData)} trainlabels: {len(trainLabels)}')
-    testData, testLabels, devData, devLabels = train_test_split(testData, testLabels, test_size=0.5)
+    testData, devData, testLabels, devLabels = train_test_split(testData, testLabels, test_size=0.5)
 
     # Define Model
     numLabels = len(labels)
