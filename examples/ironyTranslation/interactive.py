@@ -18,9 +18,18 @@ while cont:
     words = str(inp).split()
 
     # Generate classification prediciton
-    classification = classifyModel(words)
-    
-    print(classification)
+    pred = classifyModel(words)
+    i = torch.argmax(pred)
+    p = classifyModel.labels[i]
+    is_ironic = True if p == 1 else False
+
+    if is_ironic:
+        print('Sentence is ironic')
+        trans = translationModel.translate(words)
+        sent = ' '.join(trans)
+        print(f'Translation to unironic: {sent}')
+    else:
+        print("Sentence is not ironic")
 
 
 print('Goodbye!')

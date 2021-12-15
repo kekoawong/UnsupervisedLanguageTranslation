@@ -3361,3 +3361,143 @@ Train loss on round 3700 of 40867: 0.615603506565094
 Train loss on round 3800 of 40867: 0.0004228651523590088
         On line 3900/40867. Time left for epoch: 27.619 mins
 Train loss on round 3900 of 40867: 0.00020275443966966122
+        On line 4000/40867. Time left for epoch: 27.53 mins
+Train loss on round 4000 of 40867: 0.0014102048007771373
+        On line 4100/40867. Time left for epoch: 27.419 mins
+Train loss on round 4100 of 40867: 0.0005240259342826903
+        On line 4200/40867. Time left for epoch: 27.317 mins
+Train loss on round 4200 of 40867: 0.0015930355293676257
+        On line 4300/40867. Time left for epoch: 27.223 mins
+Train loss on round 4300 of 40867: 0.013699204660952091
+        On line 4400/40867. Time left for epoch: 27.113 mins
+Train loss on round 4400 of 40867: 0.0008547228644602001
+        On line 4500/40867. Time left for epoch: 27.023 mins
+Train loss on round 4500 of 40867: 0.0006524579366669059
+        On line 4600/40867. Time left for epoch: 26.912 mins
+Train loss on round 4600 of 40867: 0.0007388246012851596
+        On line 4700/40867. Time left for epoch: 26.813 mins
+Train loss on round 4700 of 40867: 3.1703810691833496
+        On line 4800/40867. Time left for epoch: 26.743 mins
+Train loss on round 4800 of 40867: 0.3158126473426819
+        On line 4900/40867. Time left for epoch: 26.653 mins
+Train loss on round 4900 of 40867: 0.0009614374139346182
+        On line 5000/40867. Time left for epoch: 26.55 mins
+Train loss on round 5000 of 40867: 0.003933788277208805
+        On line 5100/40867. Time left for epoch: 26.464 mins
+Train loss on round 5100 of 40867: 0.03019130975008011
+        On line 5200/40867. Time left for epoch: 26.391 mins
+Train loss on round 5200 of 40867: 0.00019810620869975537
+        On line 5300/40867. Time left for epoch: 26.307 mins
+Train loss on round 5300 of 40867: 0.0005317704635672271
+        On line 5400/40867. Time left for epoch: 26.213 mins
+Train loss on round 5400 of 40867: 0.00019786784832831472
+        On line 5500/40867. Time left for epoch: 26.124 mins
+Train loss on round 5500 of 40867: 0.0019043420907109976
+        On line 5600/40867. Time left for epoch: 26.06 mins
+Train loss on round 5600 of 40867: 1.1469929218292236
+        On line 5700/40867. Time left for epoch: 25.958 mins
+Train loss on round 5700 of 40867: 0.0015428080223500729
+        On line 5800/40867. Time left for epoch: 25.885 mins
+Train loss on round 5800 of 40867: 0.0008829509024508297
+        On line 5900/40867. Time left for epoch: 25.814 mins
+Train loss on round 5900 of 40867: 0.01992660202085972
+        On line 6000/40867. Time left for epoch: 25.784 mins
+Train loss on round 6000 of 40867: 0.014953897334635258
+        On line 6100/40867. Time left for epoch: 25.714 mins
+Train loss on round 6100 of 40867: 0.0029954109340906143
+        On line 6200/40867. Time left for epoch: 25.676 mins
+Train loss on round 6200 of 40867: 0.0006386386230587959
+        On line 6300/40867. Time left for epoch: 25.6 mins
+Train loss on round 6300 of 40867: 0.04184602200984955
+        On line 6400/40867. Time left for epoch: 25.542 mins
+Train loss on round 6400 of 40867: 2.5173287391662598
+        On line 6500/40867. Time left for epoch: 25.466 mins
+Train loss on round 6500 of 40867: 0.6330089569091797
+        On line 6600/40867. Time left for epoch: 25.373 mins
+Train loss on round 6600 of 40867: 0.0004980515805073082
+        On line 6700/40867. Time left for epoch: 25.29 mins
+Train loss on round 6700 of 40867: 0.0022597985807806253
+        On line 6800/40867. Time left for epoch: 25.222 mins
+Train loss on round 6800 of 40867: 0.00044169207103550434
+        On line 6900/40867. Time left for epoch: 25.139 mins
+Train loss on round 6900 of 40867: 0.0019777517300099134
+        On line 7000/40867. Time left for epoch: 25.063 mins
+Train loss on round 7000 of 40867: 0.010843755677342415
+        On line 7100/40867. Time left for epoch: 24.985 mins
+Train loss on round 7100 of 40867: 0.0012977044098079205
+        On line 7200/40867. Time left for epoch: 24.918 mins
+Train loss on round 7200 of 40867: 0.009557797573506832
+        On line 7300/40867. Time left for epoch: 24.84 mins
+Train loss on round 7300 of 40867: 0.0031867455691099167
+        On line 7400/40867. Time left for epoch: 24.754 mins
+Train loss on round 7400 of 40867: 0.0035930618178099394
+        On line 7500/40867. Time left for epoch: 24.675 mins
+Train loss on round 7500 of 40867: 0.0004287039046175778
+        On line 7600/40867. Time left for epoch: 24.587 mins
+Train loss on round 7600 of 40867: 0.0007627676823176444
+        On line 7700/40867. Time left for epoch: 24.52 mins
+Train loss on round 7700 of 40867: 0.4129868149757385
+        On line 7800/40867. Time left for epoch: 24.447 mins
+Train loss on round 7800 of 40867: 0.004274755250662565
+        On line 7900/40867. Time left for epoch: 24.362 mins
+Train loss on round 7900 of 40867: 0.010594669729471207
+        On line 8000/40867. Time left for epoch: 24.277 mins
+Train loss on round 8000 of 40867: 0.0009501233580522239
+        On line 8100/40867. Time left for epoch: 24.189 mins
+Train loss on round 8100 of 40867: 0.006537124048918486
+        On line 8200/40867. Time left for epoch: 24.121 mins
+Train loss on round 8200 of 40867: 0.00036638224264606833
+        On line 8300/40867. Time left for epoch: 24.036 mins
+Train loss on round 8300 of 40867: 0.0007207180024124682
+        On line 8400/40867. Time left for epoch: 23.951 mins
+Train loss on round 8400 of 40867: 0.0018604366341605783
+        On line 8500/40867. Time left for epoch: 23.874 mins
+Train loss on round 8500 of 40867: 0.0010594476480036974
+        On line 8600/40867. Time left for epoch: 23.796 mins
+Train loss on round 8600 of 40867: 0.004034475889056921
+        On line 8700/40867. Time left for epoch: 23.714 mins
+Train loss on round 8700 of 40867: 0.015207065269351006
+        On line 8800/40867. Time left for epoch: 23.64 mins
+Train loss on round 8800 of 40867: 0.0008032671175897121
+        On line 8900/40867. Time left for epoch: 23.56 mins
+Train loss on round 8900 of 40867: 0.0003053675754927099
+        On line 9000/40867. Time left for epoch: 23.478 mins
+Train loss on round 9000 of 40867: 0.0018137923907488585
+        On line 9100/40867. Time left for epoch: 23.386 mins
+Train loss on round 9100 of 40867: 0.000196556793525815
+        On line 9200/40867. Time left for epoch: 23.302 mins
+Train loss on round 9200 of 40867: 0.5511012077331543
+        On line 9300/40867. Time left for epoch: 23.242 mins
+Train loss on round 9300 of 40867: 0.024401210248470306
+        On line 9400/40867. Time left for epoch: 23.164 mins
+Train loss on round 9400 of 40867: 0.028457507491111755
+        On line 9500/40867. Time left for epoch: 23.078 mins
+Train loss on round 9500 of 40867: 0.07522861659526825
+        On line 9600/40867. Time left for epoch: 22.989 mins
+Train loss on round 9600 of 40867: 0.00014923889830242842
+        On line 9700/40867. Time left for epoch: 22.902 mins
+Train loss on round 9700 of 40867: 0.0006715188501402736
+        On line 9800/40867. Time left for epoch: 22.832 mins
+Train loss on round 9800 of 40867: 0.009595817886292934
+        On line 9900/40867. Time left for epoch: 22.766 mins
+Train loss on round 9900 of 40867: 0.0007950482540763915
+        On line 10000/40867. Time left for epoch: 22.682 mins
+Train loss on round 10000 of 40867: 0.00026854246971197426
+        On line 10100/40867. Time left for epoch: 22.596 mins
+Train loss on round 10100 of 40867: 0.00018690270371735096
+        On line 10200/40867. Time left for epoch: 22.518 mins
+Train loss on round 10200 of 40867: 0.0006416169344447553
+        On line 10300/40867. Time left for epoch: 22.451 mins
+Train loss on round 10300 of 40867: 0.02705340087413788
+        On line 10400/40867. Time left for epoch: 22.363 mins
+Train loss on round 10400 of 40867: 0.001719426247291267
+        On line 10500/40867. Time left for epoch: 22.28 mins
+Train loss on round 10500 of 40867: 0.0018160531762987375
+        On line 10600/40867. Time left for epoch: 22.203 mins
+Train loss on round 10600 of 40867: 0.014242780394852161
+        On line 10700/40867. Time left for epoch: 22.142 mins
+Train loss on round 10700 of 40867: 0.005977373570203781
+        On line 10800/40867. Time left for epoch: 22.088 mins
+Train loss on round 10800 of 40867: 0.0012557962909340858
+        On line 10900/40867. Time left for epoch: 22.033 mins
+Train loss on round 10900 of 40867: 0.00014578233822248876
