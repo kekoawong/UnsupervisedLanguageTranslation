@@ -47,7 +47,14 @@ Using a combination of prelabeled datasets from Kaggle, one from [Twitter Tweets
 
 Example unsupervised training command, from the root directory:
 ```
-python3 unsupervisedTranslation.py --dataf examples/ironyTranslation/data/ironicSentences.txt --datat examples/ironyTranslation/data/unironicSentences.txt --initial examples/ironyTranslation/data/roughUnironicSent.txt -o examples/ironyTranslation/outputs/ironic_to_unironic --savetf examples/ironyTranslation/models/target-forein.torch --saveft examples/ironyTranslation/models/foreign-target.torch --epochs 2 --iterations 4  
+python3 unsupervisedTranslation.py \
+--dataf examples/ironyTranslation/data/ironicSentences.txt \
+--datat examples/ironyTranslation/data/unironicSentences.txt \
+--initial examples/ironyTranslation/data/roughUnironicSent.txt \
+-o examples/ironyTranslation/outputs/ironic_to_unironic \
+--savetf examples/ironyTranslation/models/target-forein.torch \
+--saveft examples/ironyTranslation/models/foreign-target.torch \
+--epochs 2 --iterations 4  
 ```
 
 ### backstrokeSubtitles
@@ -59,5 +66,12 @@ Using data from subtitle translations from the movie *Star Wars: Episode III –
 
 Example unsupervised training command, from the root directory:
 ```
-python3 unsupervisedTranslation.py --dataf examples/backstrokeSubtitles/chinese.txt --datat examples/backstrokeSubtitles/english.txt --initial examples/backstrokeSubtitles/roughEnglish.txt -o examples/backstrokeSubtitles/outputs/chinese_to_english --savetf examples/backstrokeSubtitles/models/english-chinese.torch --saveft examples/backstrokeSubtitles/models/chinese-english.torch --epochs 2 --iterations 4 
+python3 unsupervisedTranslation.py \
+--dataf examples/backstrokeSubtitles/chinese.txt \
+--datat examples/backstrokeSubtitles/english.txt \
+--initial examples/backstrokeSubtitles/roughEnglish.txt \
+-o examples/backstrokeSubtitles/outputs/chinese_to_english \
+--savetf examples/backstrokeSubtitles/models/english-chinese.torch \
+--saveft examples/backstrokeSubtitles/models/chinese-english.torch \
+--epochs 2 --iterations 4 
 ```
