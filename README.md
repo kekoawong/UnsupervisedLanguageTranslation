@@ -1,5 +1,5 @@
 # Unsupervised Machine Translation
-This repository contains an implementation of unsupervised machine translation, primarily for the primary purpose of translating text styles without a parallel translation dataset. Implemented using Neural Networks built with [PyTorch](http://pytorch.org/) and natural language processing methods. 
+This repository contains an implementation of unsupervised machine translation, primarily for the purpose of translating text styles without a parallel translation dataset. Implemented using Neural Networks built with [PyTorch](http://pytorch.org/) and natural language processing methods. 
 
 ## Dependencies
 * [Python3](https://www.python.org)
